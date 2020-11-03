@@ -1,12 +1,10 @@
 function main(workbook: ExcelScript.Workbook): InterviewInvite[] {
-
+  console.log("Current date time: " + new Date().toUTCString())
   const MEETING_DURATION = workbook.getNamedItem('MeetingDuration').getRange().getValue() as number;
   const sheet = workbook.getWorksheet('Interviews');
   const table = sheet.getTables()[0];
-  table.getColumnByName('Start time1').getRangeBetweenHeaderAndTotal().setNumberFormatLocal("[$-en-US]m/d/yyyy h:mm AM/PM;@");
-  table.getColumnByName('Start time2').getRangeBetweenHeaderAndTotal().setNumberFormatLocal("[$-en-US]m/d/yyyy h:mm AM/PM;@");
   const dataRows: (string | number | boolean)[][] = table.getRange().getTexts();
-  // or
+  // or use this if there's no table
   // let dataRows = sheet.getUsedRange().getValues();
   const selectedRows = dataRows.filter((row, i) => {
     // Select header row and any data row with the status column equal to approach value
@@ -50,6 +48,7 @@ function generateInterviewRecords(records: RecordDetail[], mins: number): Interv
     // Interviewer 1    
     // If the start date-time is greather than current date-time, add to output records
     if ((new Date(record['Start time1'])) > new Date()) {
+      console.log("selected " + new Date(record['Start time1']).toUTCString());
       let startTime = new Date(record['Start time2']).toISOString();
       // compute the finish time of the meeting
       let finishTime = addMins(new Date(record['Start time1']), mins).toISOString();
@@ -60,13 +59,18 @@ function generateInterviewRecords(records: RecordDetail[], mins: number): Interv
         CandidateContact: record['Candidate contact'] as string,
         Interviewer: record.Interviewer1,
         InterviewerEmail: record['Interviewer1 email'],
-        StartTime: startTime, 
-        FinishTime: finishTime 
+        StartTime: startTime,
+        FinishTime: finishTime
       })
+    } else {
+      console.log("Rejected " + (new Date(record['Start time1']).toUTCString()))
     }
     // Interviewer 2 
     // If the start date-time is greather than current date-time, add to output records
     if ((new Date(record['Start time2'])) > new Date()) {
+      console.log("selected " + new Date(record['Start time2']).toUTCString());
+
+
       let startTime = new Date(record['Start time2']).toISOString();
       // compute the finish time of the meeting
       let finishTime = addMins(new Date(record['Start time2']), mins).toISOString();
@@ -78,8 +82,11 @@ function generateInterviewRecords(records: RecordDetail[], mins: number): Interv
         Interviewer: record.Interviewer2,
         InterviewerEmail: record['Interviewer2 email'],
         StartTime: startTime,
-        FinishTime: finishTime 
+        FinishTime: finishTime
       })
+    } else {
+      console.log("Rejected " + (new Date(record['Start time2']).toUTCString()))
+
     }
   })
   return interviewinvites;
