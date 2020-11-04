@@ -34,7 +34,7 @@ Full Power Automate flow.
 
 The solution uses two Office Scripts. 
 
-1. [Select filtered rows from table as JSON](Select Filtered Rows from Table as JSON.ts)
-1. [Mark as invited](Mark as Invited.ts)
+1. [Select filtered rows from table as JSON](SelectFilteredRowsFromTableAsJSON.ts)
+1. [Mark as invited](MarkAsInvited.ts)
 
 
