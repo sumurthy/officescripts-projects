@@ -14,3 +14,13 @@ Excel for web file's calculation mode can be controlled programatically using si
 1. Calculate Exel formulas for files that are set to the manual mode (also referred as re-calculate) 
 
 Checkout the script and video for more details. 
+
+## Input Excel file
+
+Any Excel file on the web will do. Checkout the video. 
+
+## Office Scripts
+
+The solution uses two Office Scripts. 
+
+1. [Manage Excel calculation and calculation mode options](ExcelRecalc.ts)
