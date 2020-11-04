@@ -26,10 +26,6 @@ The solution has 3 parts:
 
 This is the [input Excel file](HR-Schedule.xlsx) being used. 
 
-## Power Automate 
-
-Full Power Automate flow. 
-
 ## Office Scripts
 
 The solution uses two Office Scripts. 

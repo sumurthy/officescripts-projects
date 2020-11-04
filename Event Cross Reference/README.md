@@ -15,9 +15,7 @@ Checkout the directory.
 1. [Get Event Master Data](ReturnEvents.ts)
 1. [Validate Event Transactions](ValidateEventTransactions.ts)
 
-## Excel file used
-
-## Input Excel file
+## Excel files used
 
 1. [Event master data](Events.xlsx)
 1. [Event tranaction data](Event-Transactions.xlsx)
