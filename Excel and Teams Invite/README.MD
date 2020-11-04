@@ -1,4 +1,4 @@
-# Send Teams invite based on Excel table data
+# Send Teams meeting from Excel data 
 
 ## Video link
 
