@@ -3,7 +3,7 @@ function main(workbook: ExcelScript.Workbook): InterviewInvite[] {
   const MEETING_DURATION = workbook.getNamedItem('MeetingDuration').getRange().getValue() as number;
   const sheet = workbook.getWorksheet('Interviews');
   const table = sheet.getTables()[0];
-  const dataRows: (string | number | boolean)[][] = table.getRange().getTexts();
+  const dataRows: string[][] = table.getRange().getTexts();
   // or use this if there's no table
   // let dataRows = sheet.getUsedRange().getValues();
   const selectedRows = dataRows.filter((row, i) => {
@@ -20,7 +20,7 @@ function main(workbook: ExcelScript.Workbook): InterviewInvite[] {
  * This helper funciton converts table values into an object array.
  */
 function returnObjectFromValues(values: string[][]): RecordDetail[] {
-  let objArray = [];
+  let objArray: BasicObj[] = [];
   let objKeys: string[] = [];
   for (let i = 0; i < values.length; i++) {
     if (i === 0) {
@@ -49,7 +49,7 @@ function generateInterviewRecords(records: RecordDetail[], mins: number): Interv
     // If the start date-time is greather than current date-time, add to output records
     if ((new Date(record['Start time1'])) > new Date()) {
       console.log("selected " + new Date(record['Start time1']).toUTCString());
-      let startTime = new Date(record['Start time2']).toISOString();
+      let startTime = new Date(record['Start time1']).toISOString();
       // compute the finish time of the meeting
       let finishTime = addMins(new Date(record['Start time1']), mins).toISOString();
       interviewinvites.push({
