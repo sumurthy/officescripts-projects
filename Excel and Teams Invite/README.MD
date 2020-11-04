@@ -1,6 +1,6 @@
 # Send Teams invite based on Excel table data
 
-# Video link
+## Video link
 
 [Demo video](https://youtu.be/HyBdx52NOE8)
 
