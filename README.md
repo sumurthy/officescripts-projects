@@ -14,7 +14,7 @@ Check out the folders for description, source code, **Youtube videos** of each p
 
 ## Try it out yourself
 
-The project is open sourced. Try it out yourself. You'll need Microsoft (Office) 365 account from work or school with E3 or above license. Just head over to https://office.com to sign-in ot your account and get started.
+The project is open sourced. Try it out yourself. You'll need Microsoft (Office) 365 account from work or school with E3 or above license. Just head over to https://office.com to sign-in to your account and get started.
 
 ## Leave a comment
 Feel free to leave a comment or make a suggestion or log an issue by [opening a new issue](https://github.com/sumurthy/officescripts-projects/issues).
