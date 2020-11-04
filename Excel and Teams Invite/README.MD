@@ -22,9 +22,9 @@ The solution has 3 parts:
 1. The data is then sent to Teams **Create a Teams meeting** action to send invites. Send one Teams meeting per instance in the JSON array. 
 1. Send the same JSON data to another Office Script to update the status of the invitation. 
 
-## Input Excel
+## Input Excel file
 
-This is the input table being used. 
+This is the [input Excel file](HR-Schedule.xlsx) being used. 
 
 ## Power Automate 
 

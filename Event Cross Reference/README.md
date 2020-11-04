@@ -17,6 +17,9 @@ Checkout the directory.
 
 ## Excel file used
 
-Checkout the directory. 
+## Input Excel file
+
+1. [Event master data](Events.xlsx)
+1. [Event tranaction data](Event-Transactions.xlsx)
 
 
