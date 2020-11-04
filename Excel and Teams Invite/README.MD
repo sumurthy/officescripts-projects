@@ -1,5 +1,7 @@
 # Send Teams meeting from Excel data 
 
+This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel. 
+
 ## Video link
 
 [Demo video](https://youtu.be/HyBdx52NOE8)
