@@ -6,6 +6,8 @@ Check out the folders for description, source code, **Youtube videos** of each p
 
 ## Projects
 
+Check out the following end to end project that automates sample scenarios. 
+
 | Project | Details |
 |---------|---------|
 | [Cross reference Excel files and format Excel cells](https://github.com/sumurthy/officescripts-projects/tree/main/Event%20Cross%20Reference)    | This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel.        |
