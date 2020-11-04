@@ -10,7 +10,7 @@ Check out the following end to end project that automates sample scenarios.
 
 | Project | Details |
 |---------|---------|
-| [Cross reference Excel files and format Excel cells](Event%20Cross%20Reference/readme.md)    | This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel.        |
+| [Cross reference Excel files and format Excel cells](Event%20Cross%20Reference/README.md)    | This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel.        |
 | [Send Teams meeting invite and update Excel](Excel%20and%20Teams%20Invite/README.MD)    | This project shows how two Excel files can be cross-refenced and formatted using Office Scripts and Power Automate.        |
 
 
