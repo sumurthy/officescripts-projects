@@ -4,7 +4,7 @@ This project shows how to use Office Scripts and Power Automate actions to selec
 
 ## Video link
 
-[Demo video](https://youtu.be/HyBdx52NOE8)
+[Demo video](https://youtu.be/152GJyqc-Kw)
 
 
 ## Scenario: 
