@@ -1,6 +1,6 @@
 # Use Office Scripts Email Chart and Table Images
 
-This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel. 
+This project shows how to use Office Scripts and Power Automate actions to re-calculate, create chart and extract images as base-64 string to be used later to send Email.
 
 ## Video link
 
