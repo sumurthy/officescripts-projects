@@ -75,6 +75,6 @@ This is the [input Excel file](Excel-Filter.xlsx) being used.
 
 The solution uses two Office Scripts. 
 
-1. [Report Images](ExcelFilterVisibleRange.ts)
+1. [Excel Filter Visible Range](ExcelFilterVisibleRange.ts)
 
 
