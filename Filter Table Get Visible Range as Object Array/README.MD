@@ -63,7 +63,7 @@ Sample JSON sample. Each key represents uniqie value of a table. Each array inst
 
 ## Solution 
 
-The solution has 2 parts: 
+The solution has a single Office Script: 
 
 1. Office Script that perfoms the above mentioned transformation and extracts required data. 
 
