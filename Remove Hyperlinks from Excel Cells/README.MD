@@ -20,4 +20,4 @@ Checkout the script and video for more details.
 
 ## Office Scripts
 
-1. [Remove hyperlinks from Excel for web](Excel-Hyperlinks.ts)
+1. [Remove hyperlinks from Excel for web](RemoveHyperlink.ts)
