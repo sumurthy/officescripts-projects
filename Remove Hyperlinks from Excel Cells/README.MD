@@ -3,10 +3,10 @@
  This sample clears all of the hyperlink from the current worksheet. It traverses through the worksheet and if there is any hyperlink associated with the cell, it cleares the hyperlink and retains the cell value as is. 
  Logs the time it takes to complete traversal.
  
- **Note that this only works if the cell count is < 10k**
+ *Note that this only works if the cell count is < 10k*
  
 ## Video 
-Checkout the video at: 
+Checkout the video at: https://youtu.be/v20fdinxpHU
 
 ## Scenario
 
