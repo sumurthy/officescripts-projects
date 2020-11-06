@@ -2,10 +2,10 @@
  * This sample clears all of the hyperlink from the current worksheet. 
  * It traverses through the worksheet and if there is any hyperlink associated with the cell, it cleares the hyperlink and retains the cell value as is. 
  */
-function main(workbook: ExcelScript.Workbook) {
+function main(workbook: ExcelScript.Workbook, sheetName: string = 'Sheet1') {
 
   // Get the active worksheet. 
-  let sheet = workbook.getActiveWorksheet();
+  let sheet = workbook.getWorksheet(sheetName);
   const targetRange = sheet.getUsedRange(true);
   if (!targetRange) {
     console.log(`There is no data in the worksheet. `)
