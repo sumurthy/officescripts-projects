@@ -13,8 +13,8 @@ Check out the following end to end project that automates sample scenarios.
 | [Excel Recalc, create chart, extract chart, table image, email](Chart%20and%20Table%20Images)    | This project shows how to use Office Scripts and Power Automate actions to re-calculate, create chart and extract images as base-64 string to be used later to send Email.        |
 | [Filter Table and get Visible range](Filter%20Table%20Get%20Visible%20Range%20as%20Object%20Array)    | This project shows how to use Office Scripts to filter Excel table to get list of rows visible as array of objects.        |
 | [Learn how to manage calculation mode and calculate in Excel for web](Excel%20Calculation)    | This short project shows how to use Office Scripts to manage calculation mode in Excel for web and calculate in Excel files whose mode is set to be in manual mode|
-| [Cross reference Excel files and format Excel cells](Event%20Cross%20Reference)    | This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel.        |
-| [Send Teams meeting invite and update Excel](Excel%20and%20Teams%20Invite)    | This project shows how two Excel files can be cross-refenced and formatted using Office Scripts and Power Automate.        |
+| [Cross reference Excel files and format Excel cells](Event%20Cross%20Reference)    | This project shows how two Excel files can be cross-refenced and formatted using Office Scripts and Power Automate. |
+| [Send Teams meeting invite and update Excel](Excel%20and%20Teams%20Invite)    |  This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel. |
 
 
 ## Try it out yourself
