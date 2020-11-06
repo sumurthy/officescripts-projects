@@ -4,7 +4,7 @@ Add comments to Excel cell with at-mention of a contact.
 
 ## Video link
 
-[Demo video](https://youtu.be/HyBdx52NOE8)
+[Demo video]()
 
 
 ## Scenario: 
