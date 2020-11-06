@@ -1,6 +1,6 @@
 # Add and manage comments in Excel sheet
 
-Add comments to Excel cell with @mention to conteact. 
+Add comments to Excel cell with at-mention of a contact. 
 
 ## Video link
 
