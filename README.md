@@ -2,7 +2,14 @@
 
 This repository contains [Office Scripts](https://docs.microsoft.com/office/dev/scripts/overview/excel) based automation solutions that helps end users achieve automation of daily tasks. It contains realistic scenarios that business users face and provides detailed solution along with step-by-step instructional video links. 
 
-Check out the folders for description, source code, **Youtube videos** of each project. 
+## Basics 
+
+There are great content in the Office Scripts official website (linked above) that will help you get started with. In addition, check-out the following videos to learn the basics: 
+* Quick intro: https://www.youtube.com/watch?v=FlWerQobJBM&ab_channel=Microsoft365Developer
+* Great video by Paul Kelly: https://www.youtube.com/watch?v=2fHLfyOEx4Y&ab_channel=Computergaga
+* Use it in Power Automate: https://www.youtube.com/watch?v=1jxXXnxdG9A&ab_channel=Microsoft365Developer
+
+For each of the following projects, check out the folders for description, source code, **Youtube videos** of each project. 
 
 ## Projects
 
