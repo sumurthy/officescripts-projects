@@ -18,6 +18,7 @@ Check out the following end to end project that automates sample scenarios.
 | Project | Details |
 |---------|---------|
 | [Excel Recalc, create chart, extract chart, table image, email](Chart%20and%20Table%20Images)    | This project shows how to use Office Scripts and Power Automate actions to re-calculate, create chart and extract images as base-64 string to be used later to send Email.        |
+|[Copy Excel tables into new master table](Copy%20Tables%20to%20Master%20Table)|This project shows how to combine data that resides in Excel tables into a new master table with all rows included. It creates a new worksheet and combines all rows into a single table.|
 | [Filter Table and get Visible range](Filter%20Table%20Get%20Visible%20Range%20as%20Object%20Array)    | This project shows how to use Office Scripts to filter Excel table to get list of rows visible as array of objects.        |
 | [Add comments to Excel cell with at-mention of a contact](Add%20Excel%20Comments)    | This project shows how to use Office Scripts to add comments to Excel cell with at-mention of a contact.|
 | [Learn how to manage calculation mode and calculate in Excel for web](Excel%20Calculation)    | This short project shows how to use Office Scripts to manage calculation mode in Excel for web and calculate in Excel files whose mode is set to be in manual mode.|
