@@ -1,4 +1,6 @@
-# 
+# Output Excel table data as array of objects (as JSON) for usage in Power Automate 
+
+Often it is beneficial to extract Excel table data as array of objects (each item representing a row) in the form of a JSON using Office Scripts. 
 
 ## Input table data
 ![Input table](Table-Input.png) 
