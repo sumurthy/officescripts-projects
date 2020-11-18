@@ -1,2 +1,59 @@
-#
+# 
+
+## Input table data
+![Input table](Table-Input.png) 
+
+## Output - Excel table data as JSON: array of rows 
+
+```json
+[{
+	"Event ID": "E107",
+	"Date": "2020-12-10",
+	"Location": "Montgomery",
+	"Capacity": "10",
+	"Speakers": "Debra Berger"
+}, {
+	"Event ID": "E108",
+	"Date": "2020-12-11",
+	"Location": "Montgomery",
+	"Capacity": "10",
+	"Speakers": "Delia Dennis"
+}, {
+	"Event ID": "E109",
+	"Date": "2020-12-12",
+	"Location": "Montgomery",
+	"Capacity": "10",
+	"Speakers": "Diego Siciliani"
+}, {
+	"Event ID": "E110",
+	"Date": "2020-12-13",
+	"Location": "Boise",
+	"Capacity": "25",
+	"Speakers": "Gerhart Moller"
+}, {
+	"Event ID": "E111",
+	"Date": "2020-12-14",
+	"Location": "Salt Lake City",
+	"Capacity": "20",
+	"Speakers": "Grady Archie"
+}, {
+	"Event ID": "E112",
+	"Date": "2020-12-15",
+	"Location": "Fremont",
+	"Capacity": "25",
+	"Speakers": "Irvin Sayers"
+}, {
+	"Event ID": "E113",
+	"Date": "2020-12-16",
+	"Location": "Salt Lake City",
+	"Capacity": "20",
+	"Speakers": "Isaiah Langer"
+}, {
+	"Event ID": "E114",
+	"Date": "2020-12-17",
+	"Location": "Salt Lake City",
+	"Capacity": "20",
+	"Speakers": "Johanna Lorenz"
+}]
+```
 
