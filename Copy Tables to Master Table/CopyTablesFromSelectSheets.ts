@@ -15,7 +15,10 @@ function main(workbook: ExcelScript.Workbook) {
       }      
       for (let table of tables) {
         let dataValues = table.getRangeBetweenHeaderAndTotal().getTexts();
+        let rowCount = table.getRowCount();
+        if (rowCount > 0) {
         combinedTable.addRows(-1, dataValues);
+        }
       }
     })
 }
