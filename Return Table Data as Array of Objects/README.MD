@@ -61,9 +61,8 @@ Often it is beneficial to extract Excel table data as array of objects (each ite
 ```
 
 
-## Office Scripts 
+## Office Scripts source code
 
-Checkout the directory. 
 1. [Return table data as array of objects/JSON](TableAsArrayOfObjects.ts)
 
 ## Excel files used
