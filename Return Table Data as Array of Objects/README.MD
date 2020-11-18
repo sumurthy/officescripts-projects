@@ -65,6 +65,8 @@ Often it is beneficial to extract Excel table data as array of objects (each ite
 
 1. [Return table data as array of objects/JSON](TableAsArrayOfObjects.ts)
 
+To suit your needs/data, chage the `interface TableData` structure to match your table columns. Note that for column names that contains spaces, be sure to name your key within quotes as with `"Event Id"` in the sample. 
+
 ## Excel files used
 
 See the image and re-create it on your own. 
