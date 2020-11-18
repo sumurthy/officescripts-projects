@@ -60,6 +60,12 @@ Often it is beneficial to extract Excel table data as array of objects (each ite
 }]
 ```
 
+## Use this in Power Automate 
+
+See a similar sample for how to use such a script in Power Auotmate: 
+
+* Sample: https://github.com/sumurthy/officescripts-projects/tree/main/Chart%20and%20Table%20Images
+
 
 ## Office Scripts source code
 
