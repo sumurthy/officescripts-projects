@@ -7,7 +7,7 @@ function main(workbook: ExcelScript.Workbook): TableData[] {
   if (table.getRowCount() > 0)  {
     returnObjects = returnObjectFromValues(texts);
   } 
-  console.log(returnObjects);  
+  console.log(JSON.stringify(returnObjects));  
   return returnObjects
 }
 
