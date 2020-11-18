@@ -1,6 +1,7 @@
 # Output Excel table data as array of objects (as JSON) for usage in Power Automate 
 
-Often it is beneficial to extract Excel table data as array of objects (each item representing a row) in the form of a JSON using Office Scripts. 
+Often it is beneficial to extract Excel table data as array of objects (each item representing a row) in the form of a JSON using Office Scripts. This helps with extracting the data from Excel in the same format that is visible to the user. Columns such as date and date-time can then be fed into other systems using Power Automate flows. 
+
 
 ## Input table data
 ![Input table](Table-Input.png) 
@@ -59,3 +60,12 @@ Often it is beneficial to extract Excel table data as array of objects (each ite
 }]
 ```
 
+
+## Office Scripts 
+
+Checkout the directory. 
+1. [Return table data as array of objects/JSON](TableAsArrayOfObjects.ts)
+
+## Excel files used
+
+See the image and re-create it on your own. 
