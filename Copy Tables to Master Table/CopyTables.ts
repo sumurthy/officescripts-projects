@@ -1,6 +1,4 @@
 function main(workbook: ExcelScript.Workbook) {
-    const sheetNames = ['Sheet1', 'Sheet2', 'Sheet3'];
-    
     workbook.getWorksheet('Combined')?.delete();
     const newSheet = workbook.addWorksheet('Combined');
     
@@ -9,10 +7,12 @@ function main(workbook: ExcelScript.Workbook) {
     console.log(headerValues);
     const targetRange = updateRange(newSheet, headerValues);
     const combinedTable = newSheet.addTable(targetRange.getAddress(), true);
-    for (let table of tables) {
-      
+    for (let table of tables) {      
       let dataValues = table.getRangeBetweenHeaderAndTotal().getTexts();
-      combinedTable.addRows(-1, dataValues);
+      let rowCount = table.getRowCount();
+      if (rowCount > 0) {
+        combinedTable.addRows(-1, dataValues);
+      }
     }
 }
 
