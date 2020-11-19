@@ -1,5 +1,5 @@
 function main(workbook: ExcelScript.Workbook): TableData[] {
-  const table = workbook.getWorksheet('Sheet3').getTables()[0];
+  const table = workbook.getWorksheet('WithHyperLink').getTables()[0];
   const range = table.getRange();
   // If you know the table name, you can also do this...
   // const table = workbook.getTable('Table13436');
