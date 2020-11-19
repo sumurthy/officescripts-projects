@@ -25,7 +25,7 @@ Check out the following end to end project that automates sample scenarios.
 | [Cross reference Excel files and format Excel cells](Event%20Cross%20Reference)    | This project shows how two Excel files can be cross-refenced and formatted using Office Scripts and Power Automate. |
 | [Send Teams meeting invite and update Excel](Excel%20and%20Teams%20Invite)    |  This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel. |
 | [Remove hyperlink from Excel cells](Remove%20Hyperlinks%20from%20Excel%20Cells)    | This sample clears all of the hyperlink from the current worksheet. It traverses through the worksheet and if there is any hyperlink associated with the cell, it cleares the hyperlink and retains the cell value as is. Logs the time it takes to complete traversal. |
-| [Output Excel table data as array of objects (as JSON) for usage in Power Automate](Return%20Table%20Data%20as%20Array%20of%20Objects)    | Output Excel table data as array of objects (as JSON) for usage in Power Automate. |
+| [Output Excel table data as array of objects (as JSON) with hyperlink data for usage in Power Automate](Return%20Table%20Data%20as%20Array%20of%20Objects)    | Output Excel table data as array of objects (as JSON) for usage in Power Automate. Contains two samples - one that extracts basic text values and a second one that extracts hyperlink value instead of the text value for one of the columns. |
 
 
 ## Try it out yourself
