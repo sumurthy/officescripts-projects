@@ -36,6 +36,6 @@ interface TableData {
   "Event ID": string
   Date: string
   Location: string
-  Cpacity: string
+  Capacity: string
   Speakers: string
 }
