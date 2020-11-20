@@ -24,6 +24,7 @@ The solution has 2 parts:
 1. A power Automate flow to invoke script and email the results. 
 
 ## Input Excel file
+Download the input Excel file used in this sample and try it out yourself! 
 
 This is the [input Excel file](Email-Chart-Table.xlsx) being used. 
 
