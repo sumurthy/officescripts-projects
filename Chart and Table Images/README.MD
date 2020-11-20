@@ -21,8 +21,10 @@ Example scenario:
 #### Input data
 ![Inout data](Input-Data.png) 
 
-### Output chart and the email sent 
+### Output chart 
 ![Chart created](Chart-Created.png) 
+
+## Email that was received through Power Automate flow 
 ![Email received](Email-Received.png) 
 
 ## Solution 
