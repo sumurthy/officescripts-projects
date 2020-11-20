@@ -25,10 +25,10 @@ The sample contains two part.
 ### Part-2 Generate document number on a table
 #### Before the new row is added 
 ![Table before](Table-Before.png) 
-### After the new row is added 
+#### After the new row is added 
 ![Table after](Table-After.png) 
 
-## Use this in Power Automate 
+### Use this in Power Automate 
 
 ## Office Scripts source code
 
@@ -37,4 +37,6 @@ The sample contains two part.
 
 ## Excel files used
 
-[Excel file](Table-Data-With-Hyperlinks.xlsx)
+Download the input Excel file used in this sample and try it out yourself! 
+
+[Excel file](Document-number-generator.xlsx)
