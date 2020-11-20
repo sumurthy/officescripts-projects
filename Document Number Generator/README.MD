@@ -7,19 +7,23 @@ The sample contains two part.
 
 * Part-1: achieves this scenario by reading and adding row to a worksheet containing plain range. 
 * PArt-2: achieves this scenario by reading and adding row to a table (little bit simpler). 
-## Part-1 Generate document number on a range
+
+
 
 ## Video 
-
 [Step by step recording]()
 
-### Before the new row is added 
+## Screenshots 
+
+### Part-1 Generate document number on a range
+
+#### Before the new row is added 
 ![Range before](Range-Before.png) 
 ### After the new row is added 
 ![Range after](Range-After.png) 
 
-## Part-2 Generate document number on a table
-### Before the new row is added 
+### Part-2 Generate document number on a table
+#### Before the new row is added 
 ![Table before](Table-Before.png) 
 ### After the new row is added 
 ![Table after](Table-After.png) 
