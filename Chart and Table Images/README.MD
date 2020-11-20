@@ -16,6 +16,15 @@ Example scenario:
 * Get Chart and Table images
 * Email the images to recipient using Power Automate action
 
+## Screenshots
+
+#### Input data
+![Inout data](Input-Data.png) 
+
+### Output chart and the email sent 
+![Chart created](Chart-Created.png) 
+![Email received](Email-Received.png) 
+
 ## Solution 
 
 The solution has 2 parts: 
