@@ -22,6 +22,7 @@ Example scenario:
 1. It also removes any existing comment before adding new comment. 
 
 ## Input Excel file
+Download the input Excel file used in this sample and try it out yourself! 
 
 This is the [input Excel file](Excel-Comments.xlsx) being used. 
 
