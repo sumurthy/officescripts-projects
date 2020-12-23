@@ -7,3 +7,6 @@ This script achieves the following:
 * Move all selected rows into a another (target) table on another worksheet
 * Re-applies the filter on the source table.
 
+There are two variants of the solution. It mainly differs in the way the rows are selected. 
+* In one script, the rows are selected by applying the table filter and reading the visible range. 
+* In the second, the rows are selected simply by reading the values and extracting the row values.
