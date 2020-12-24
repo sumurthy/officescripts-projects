@@ -7,6 +7,25 @@ This script achieves the following:
 * Move all selected rows into a another (target) table on another worksheet
 * Re-applies the filter on the source table.
 
+## Video link
+
+[Demo video]()
+
+## Solution
+
 There are two variants of the solution. It mainly differs in the way the rows are selected. 
-* In one script, the rows are selected by applying the table filter and reading the visible range. 
-* In the second, the rows are selected simply by reading the values and extracting the row values.
+* In one script, the rows are selected by applying the table filter and reading the visible range. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+* In the second, the rows are selected simply by reading the values and extracting the row values. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+
+## Input Excel file
+Download the input Excel file used in this sample and try it out yourself! 
+
+This is the [input Excel file](Excel_TableFilters.xlsx) being used. 
+
+## Office Scripts
+
+The solution uses two Office Scripts. 
+
+1. [Add comment and at-mention](AddComment.ts)
+
+
