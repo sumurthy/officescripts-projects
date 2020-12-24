@@ -27,7 +27,7 @@ This is the [input Excel file](Excel_TableFilters.xlsx) being used.
 
 The solution uses two Office Scripts:
 
-1. [Move Rows Using Table Filter](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
-1. [Move Rows Using Range Values](MoveRowsAcrossTables/MoveRowsUsingRangeValues.ts)
+1. [Move Rows Using Table Filter](MoveRowsUsingTableFilter.ts)
+1. [Move Rows Using Range Values](MoveRowsUsingRangeValues.ts)
 
 
