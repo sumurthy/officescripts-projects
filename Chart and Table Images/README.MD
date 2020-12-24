@@ -19,7 +19,7 @@ Example scenario:
 ## Screenshots
 
 #### Input data
-![Inout data](Input-Data.png) 
+![Input data](Input-Data.png) 
 
 ### Output chart 
 ![Chart created](Chart-Created.png) 
