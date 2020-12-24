@@ -33,7 +33,7 @@ function main(workbook: ExcelScript.Workbook) {
   }
   // If no data rows to process, exit script.
   if (rowsToRemoveValues.length < 1) {
-    console.log('No rows selected from the source table that matched the filter criteria.');
+    console.log('No data rows selected from the source table that matched the filter criteria.');
     return;
   }
   console.log(`Adding ${rowsToRemoveValues.length} rows to target table.`);
