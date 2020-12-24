@@ -18,6 +18,7 @@ Check out the following end to end project that automates sample scenarios.
 | Project | Details |
 |---------|---------|
 | [Excel Recalc, create chart, extract chart, table image, email](Chart%20and%20Table%20Images)    | This project shows how to use Office Scripts and Power Automate actions to re-calculate, create chart and extract images as base-64 string to be used later to send Email.        |
+| [Move select rows across tables using filter and value lookup (2 scripts)](Move%20Rows%20Across%20Tables)    | This project moves certain rows that meet a criteria from one table (source) into a another table (target) on another worksheet using (1) plain values based selection and (2) using column filter.     |
 |[Copy Excel tables into new master table](Copy%20Tables%20to%20Master%20Table)|This project shows how to combine data that resides in Excel tables into a new master table with all rows included. It creates a new worksheet and combines all rows into a single table.|
 | [Filter Table and get Visible range](Filter%20Table%20Get%20Visible%20Range%20as%20Object%20Array)    | This project shows how to use Office Scripts to filter Excel table to get list of rows visible as array of objects.        |
 | [Document number generator](Document%20Number%20Generator)    | This scenario helps a user generate a unique document number with a specific format and add an entry to a range or table  |
