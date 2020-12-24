@@ -10,7 +10,7 @@ This script achieves the following:
 
 ## Video link
 
-[Demo video]()
+[Demo video](https://youtu.be/_3t3Pk4i2L0)
 
 ## Solution
 
