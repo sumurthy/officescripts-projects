@@ -8,9 +8,12 @@ function main(workbook: ExcelScript.Workbook) {
 
   // Get the table objects
   let targetTable = workbook.getTable(TargetTableName);
-  // let sourceTable = workbook.getTable(SourceTableName);
-  let sourceTable = workbook.getWorksheet('Sheet2').getTables()[0];
+  let sourceTable = workbook.getTable(SourceTableName);
+  // If you don't know the table names, you can fetch first table on a given worksheet name
+  // let targetTable = workbook.getWorksheet('Sheet1').getTables()[0];
+  // let sourceTable = workbook.getWorksheet('Sheet2').getTables()[0];
 
+  
   if (!targetTable || !sourceTable) {
     console.log(`Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `);
     return;
