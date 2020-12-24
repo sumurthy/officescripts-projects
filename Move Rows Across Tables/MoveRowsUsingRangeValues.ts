@@ -36,29 +36,30 @@ function main(workbook: ExcelScript.Workbook) {
 
   // Range object of table data
   const sourceRange = sourceTable.getRangeBetweenHeaderAndTotal();
-
+  // Get data values of the tablw rows
   const dataRows: (number | string | boolean)[][] = sourceTable.getRangeBetweenHeaderAndTotal().getValues();
 
-  let rowsToRemoveValues: (number | string | boolean)[][] = [];
+  // Create variables to hold the rows to be moved and their addresses
+  let rowsToMoveValues: (number | string | boolean)[][] = [];
   let rowAddressToRemove: string[] = [];
 
   // Get the data values to insert to target table 
   for (let i = 0; i < dataRows.length; i++) { 
     if (dataRows[i][IndexOfColumnToFilterOn] === ValueToFilterOn) {
-      rowsToRemoveValues.push(dataRows[i]);
+      rowsToMoveValues.push(dataRows[i]);
       // Get the intersection between table address and the entire row where we found the match. This provides the address of the range to remove. 
       let address = sourceRange.getIntersection(sourceRange.getCell(i,0).getEntireRow()).getAddress();
       rowAddressToRemove.push(address);
     }
   }
   // If no data rows to process, exit script.
-  if (rowsToRemoveValues.length < 1) {
+  if (rowsToMoveValues.length < 1) {
     console.log('No rows selected from the source table that matched the filter criteria.');
     return;
   }
-  console.log(`Adding ${rowsToRemoveValues.length} rows to target table.`);
+  console.log(`Adding ${rowsToMoveValues.length} rows to target table.`);
   // Insert rows at the end of target table. Change the first argument to suit your target location (e.g., 0 for beginning, -1 for end).
-  targetTable.addRows(-1, rowsToRemoveValues)
+  targetTable.addRows(-1, rowsToMoveValues)
   // Get worksheet reference where the table rows to be deleted resides. 
   const sheet = sourceTable.getWorksheet();
 
