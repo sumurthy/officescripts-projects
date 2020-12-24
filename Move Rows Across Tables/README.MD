@@ -15,8 +15,8 @@ This script achieves the following:
 ## Solution
 
 There are two variants of the solution. It mainly differs in the way the rows are selected. 
-* In one script, the rows are selected by applying the table filter and reading the visible range. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
-* In the second, the rows are selected simply by reading the values and extracting the row values. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+* In one script, the rows are selected by applying the table filter and reading the visible range. [Script](MoveRowsUsingTableFilter.ts)
+* In the second, the rows are selected simply by reading the values and extracting the row values. [Script](MoveRowsUsingRangeValues.ts)
 
 ## Input Excel file
 Download the input Excel file used in this sample and try it out yourself! 
@@ -27,7 +27,7 @@ This is the [input Excel file](Excel_TableFilters.xlsx) being used.
 
 The solution uses two Office Scripts:
 
-1. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
-1. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+1. [Move Rows Using Table Filter](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+1. [Move Rows Using Range Values](MoveRowsAcrossTables/MoveRowsUsingRangeValues.ts)
 
 
