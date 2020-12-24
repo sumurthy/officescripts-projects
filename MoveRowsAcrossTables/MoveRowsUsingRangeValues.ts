@@ -4,16 +4,36 @@ function main(workbook: ExcelScript.Workbook) {
   const TargetTableName = 'Table1';
   const SourceTableName = 'Table2';
   const IndexOfColumnToFilterOn = 1; // 0-index
+  const NameOfColumnToFilterOn = 'Category';
   const ValueToFilterOn = 'Clothing';
 
   // Get the table objects
   let targetTable = workbook.getTable(TargetTableName);
   let sourceTable = workbook.getTable(SourceTableName);
+  
+  // If you don't know the table names, you can fetch first table on a given worksheet name
+  // let targetTable = workbook.getWorksheet('Sheet1').getTables()[0];
+  // let sourceTable = workbook.getWorksheet('Sheet2').getTables()[0];
 
   if (!targetTable || !sourceTable) {
     console.log(`Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `);
     return;
   }
+
+  // Save all of the filter criteria 
+  // Initialize an empty object to hold the filter criteria
+  const tableFilters = {};
+  // For each table column, collect the filter criteria
+  sourceTable.getColumns().forEach((column) => {
+    let colFilterCriteria = column.getFilter().getCriteria();
+    if (colFilterCriteria) {
+      // If we don't remove these two keys, the API fails for some reason. So, remove these..
+      delete colFilterCriteria['@odata.type'];
+      delete colFilterCriteria['subField'];
+      tableFilters[column.getName()] = colFilterCriteria;
+    }
+  });
+
   // Range object of table data
   const sourceRange = sourceTable.getRangeBetweenHeaderAndTotal();
 
@@ -33,7 +53,7 @@ function main(workbook: ExcelScript.Workbook) {
   }
   // If no data rows to process, exit script.
   if (rowsToRemoveValues.length < 1) {
-    console.log('No data rows selected from the source table that matched the filter criteria.');
+    console.log('No rows selected from the source table that matched the filter criteria.');
     return;
   }
   console.log(`Adding ${rowsToRemoveValues.length} rows to target table.`);
@@ -42,26 +62,12 @@ function main(workbook: ExcelScript.Workbook) {
   // Get worksheet reference where the table rows to be deleted resides. 
   const sheet = sourceTable.getWorksheet();
 
-  // Save all of the filter criteria 
-  // Initialize an empty object to hold the filter criteria
-  const tableFilters = {};
-  // For each table column, collect the filter criteria
-  sourceTable.getColumns().forEach((column) => {
-    let colFilterCriteria = column.getFilter().getCriteria();
-    if (colFilterCriteria) {
-      // If we don't remove these two keys, the API fails for some reason. So, remove these..
-      delete colFilterCriteria['@odata.type'];
-      delete colFilterCriteria['subField'];
-      tableFilters[column.getName()] = colFilterCriteria;
-    }
-  });
   // Remove all filters before removing rows
   sourceTable.getAutoFilter().clearCriteria();
 
   // !!Important!!  Reverse the address and remove from the bottom so that the right rows are removed. If not reversed, the resulting row upwards shift will mean that incorrect rows will be removed. 
   console.log(`Removing ${rowAddressToRemove.length} from the source table. `)
   rowAddressToRemove.reverse().forEach((address) => {
-    console.log(`Deleting row: ${address}`)
     sheet.getRange(address).delete(ExcelScript.DeleteShiftDirection.up);
   });
   // Re-apply filters 
@@ -69,9 +75,17 @@ function main(workbook: ExcelScript.Workbook) {
   console.log(tableFilters);
 
   // Re-apply all column filters
+  reApplyFilters(sourceTable, NameOfColumnToFilterOn, tableFilters);
+  console.log("Finished.")
+  return;
+}
+
+function reApplyFilters(sourceTable: ExcelScript.Table, columnNameFilteredOn: string, tableFilters: {}): void {
+
+  // Re-apply all column filters
   Object.keys(tableFilters).forEach((columnName) => {
     sourceTable.getColumnByName(columnName).getFilter().apply(tableFilters[columnName]);
-  })  
-  console.log("Finished.")
+  });
+  sourceTable.getColumnByName(columnNameFilteredOn).getFilter().clear();
   return;
 }
