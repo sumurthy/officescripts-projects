@@ -86,6 +86,9 @@ function main(workbook: ExcelScript.Workbook) {
     sheet.getRange(address).delete(ExcelScript.DeleteShiftDirection.up);
   });
 
+  // Format source table to wrap text (important to do this before applying back filters)
+  sourceTable.getRange().getFormat().setWrapText(true);  
+  
   // Re-apply filters 
   // Log the criteria for testing purpose (not required)
   console.log(tableFilters);
