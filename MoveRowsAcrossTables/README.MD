@@ -24,8 +24,9 @@ This is the [input Excel file](Excel_TableFilters.xlsx) being used.
 
 ## Office Scripts
 
-The solution uses two Office Scripts. 
+The solution uses two Office Scripts:
 
-1. [Add comment and at-mention](AddComment.ts)
+1. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
+1. [Script](MoveRowsAcrossTables/MoveRowsUsingTableFilter.ts)
 
 
