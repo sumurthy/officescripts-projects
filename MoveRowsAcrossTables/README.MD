@@ -7,7 +7,7 @@ This script achieves the following:
 * Move all selected rows into a another (target) table on another worksheet
 * Re-applies the filter on the source table.
 
-![Inout data](table-filter-s-t.png.png) 
+![Before and after images](table-filter-s-t.png) 
 
 ## Video link
 
