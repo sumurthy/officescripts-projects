@@ -74,7 +74,9 @@ function main(workbook: ExcelScript.Workbook) {
   // Re-apply filters 
   // Log the criteria for testing purpose (not required)
   console.log(tableFilters);
-
+  // Format source table to wrap text (important to do this before applying back filters)
+  sourceTable.getRange().getFormat().setWrapText(true);  
+  
   // Re-apply all column filters
   reApplyFilters(sourceTable, NameOfColumnToFilterOn, tableFilters);
   console.log("Finished.")
