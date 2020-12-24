@@ -10,8 +10,9 @@ function main(workbook: ExcelScript.Workbook) {
   let targetTable = workbook.getTable(TargetTableName);
   let sourceTable = workbook.getTable(SourceTableName);
 
-  if (!targetTable && !sourceTable) {
+  if (!targetTable || !sourceTable) {
     console.log(`Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `);
+    return;
   }
   // Range object of table data
   const sourceRange = sourceTable.getRangeBetweenHeaderAndTotal();
