@@ -56,7 +56,7 @@ getBoundingRect(anotherRange)
 getIntersection(anotherRange)
 
 
-## Methods that return other objects (non Range objects) 
+## Methods that return other objects (non range objects) 
 
 * getDirectPrecedents()
 * getWorksheet()
