@@ -1,14 +1,14 @@
 # Range Basics (Get Methods)
 
-## Basic range metadata 
+## Methods that return some range metadata 
 
 * getAddress(), getAddressLocal()
 * getCellCount()
 * getRowCount(), getColumnCount()
 
-## Constants associated with Range 
+## Methods that returns data/constants associated with a giben range 
 
-### Singular 
+### Returned as singular cell value
 
 * getFormula(), getFormulaLocal()
 * getFormulaR1C1()
@@ -17,7 +17,7 @@
 * getValue()
 * getValueType()
 
-### 2-D arrays 
+### Retrned as 2-D arrays (whole range)
 
 * getFormulas(), getFormulasLocal()
 * getFormulasR1C1()
@@ -51,12 +51,12 @@
 * getOffsetRange(rowOffset, columnOffset)
 * getResizedRange(deltaRows, deltaColumns)
 
-## Methods that return range object in relation to another range object 
+## Methods that return a range object in relation to another range object 
 getBoundingRect(anotherRange)
 getIntersection(anotherRange)
 
 
-## Methods that return other (non Range objects) 
+## Methods that return other objects (non Range objects) 
 
 * getDirectPrecedents()
 * getWorksheet()
