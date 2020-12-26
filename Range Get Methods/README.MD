@@ -1,4 +1,4 @@
-# Range Basics (Get Methods)
+# Range Basics: Get Methods
 
 ## Methods that return some range metadata 
 
