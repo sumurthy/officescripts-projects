@@ -46,14 +46,17 @@
 * getRowHidden()
 * getRowsAbove(count)
 * getRowsBelow(count)
+
+--- Important/interesting---
+
 * getUsedRange(valuesOnly)
 * getAbsoluteResizedRange(numRows, numColumns)
 * getOffsetRange(rowOffset, columnOffset)
 * getResizedRange(deltaRows, deltaColumns)
 
 ## Methods that return a range object in relation to another range object 
-getBoundingRect(anotherRange)
-getIntersection(anotherRange)
+* getBoundingRect(anotherRange)
+* getIntersection(anotherRange)
 
 
 ## Methods that return other objects (non range objects) 
