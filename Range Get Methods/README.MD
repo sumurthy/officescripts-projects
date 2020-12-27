@@ -17,7 +17,7 @@
 * getValue()
 * getValueType()
 
-### Retrned as 2-D arrays (whole range)
+### Returned as 2-D arrays (whole range)
 
 * getFormulas(), getFormulasLocal()
 * getFormulasR1C1()
@@ -66,5 +66,30 @@
 * getTables(fullyContained)
 * getPivotTables(fullyContained)
 * getDataValidation()
+* getPredefinedCellStyle()
 
+## Set methods 
+
+### Singular cell set methods
+
+* setFormula(formula)	
+* setFormulaLocal(formulaLocal)	
+* setFormulaR1C1(formulaR1C1)	
+* setNumberFormatLocal(numberFormatLocal)	
+* setValue(value)	
+
+### 2D / entire range set methods 
+
+* setFormulas(formulas)	
+* setFormulasLocal(formulasLocal)	
+* setFormulasR1C1(formulasR1C1)	
+* setNumberFormat(numberFormat)	
+* setNumberFormats(numberFormats)	
+* setNumberFormatsLocal(numberFormatsLocal)
+* setValues(values)
+
+# Other methods 
+
+* merge(across)
+* unmerge()
 
