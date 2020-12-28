@@ -6,11 +6,11 @@ This script achieves the following:
 * Move all selected rows into a another (target) table on another worksheet
 * Re-applies the relevant filters on the source table.
 
-![Before and after images](table-filter-s-t.png) 
-
 ## Video link
 
 [![Watch step by step video](v_filters.jpg)](https://youtu.be/_3t3Pk4i2L0 "Watch step by step video")
+
+![Before and after images](table-filter-s-t.png) 
 
 ## Solution
 
@@ -31,3 +31,4 @@ The solution uses two Office Scripts:
 1. [Move Rows Using Range Values](MoveRowsUsingRangeValues.ts)
 
 
+ 
