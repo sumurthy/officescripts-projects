@@ -4,6 +4,11 @@ This repository contains [Office Scripts](https://docs.microsoft.com/office/dev/
 
 ## Basics 
 
+| Project | Details |
+|---------|---------|
+| [Excel Range](Range%20Basics)    | This article shows the basics of using Range object and its APIs.    |
+
+
 There are great content in the Office Scripts official website (linked above) that will help you get started with. In addition, check-out the following videos to learn the basics: 
 * Quick intro: https://www.youtube.com/watch?v=FlWerQobJBM&ab_channel=Microsoft365Developer
 * Great video by Paul Kelly: https://www.youtube.com/watch?v=2fHLfyOEx4Y&ab_channel=Computergaga
@@ -11,7 +16,7 @@ There are great content in the Office Scripts official website (linked above) th
 
 For each of the following projects, check out the folders for description, source code, **Youtube videos** of each project. 
 
-## Projects
+## Beyond Basics Projects
 
 Check out the following end to end project that automates sample scenarios. 
 
