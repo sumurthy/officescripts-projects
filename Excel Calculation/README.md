@@ -3,7 +3,8 @@
 This project shows how to use Excel application's calculation mode and calculate methods in Excel for web using Office Scripts. 
 
 ## Video 
-Checkout the video at: https://youtu.be/iw6O8QH01CI
+
+[![Watch step by step video](v_calc_mode.jpg)](https://youtu.be/iw6O8QH01CI "Watch step by step video")
 
 ## Scenario
 
