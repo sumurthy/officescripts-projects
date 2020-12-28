@@ -8,11 +8,6 @@ The sample contains two part.
 * Part-1: achieves this scenario by reading and adding row to a worksheet containing plain range. 
 * PArt-2: achieves this scenario by reading and adding row to a table (little bit simpler). 
 
-
-
-## Video 
-[Step by step recording]()
-
 ## Screenshots 
 
 ### Part-1 Generate document number on a range
