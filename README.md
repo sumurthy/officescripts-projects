@@ -10,7 +10,7 @@ For each of the following projects, check out the folders for description, sourc
 |---------|---------|
 | [Learn about the Excel Range object](Range%20Basics)    | This article shows the basics of using Range object and its APIs. This is a foundational topic that'll be used across all other projects. Start here...   |
 
-## Beyond Basics Projects
+## Beyond Basics 
 
 Check out the following end to end project that automates sample scenarios. 
 
