@@ -6,7 +6,7 @@ This repository contains [Office Scripts](https://docs.microsoft.com/office/dev/
 
 | Project | Details |
 |---------|---------|
-| [Excel Range](Range%20Basics)    | This article shows the basics of using Range object and its APIs.    |
+| [Learn about the Excel Range object](Range%20Basics)    | This article shows the basics of using Range object and its APIs. This is a foundational topic that'll be used across all other projects. Start here...   |
 
 
 There are great content in the Office Scripts official website (linked above) that will help you get started with. In addition, check-out the following videos to learn the basics: 
