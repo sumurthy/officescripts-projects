@@ -10,7 +10,7 @@ This script achieves the following:
 
 ## Video link
 
-[Demo video](https://youtu.be/_3t3Pk4i2L0)
+[![Watch step by step video](v_filters.jpg)](https://youtu.be/_3t3Pk4i2L0 "Watch step by step video")
 
 ## Solution
 
