@@ -8,7 +8,7 @@ There are two variations of this script
 
 ## Video link
 
-[step-by-step video](https://youtu.be/di-8JukK3Lc)
+[![Watch step by step video](v_merge_tables.jpg)](https://youtu.be/di-8JukK3Lc "Watch step by step video")
 
 ## Office Scripts 
 
