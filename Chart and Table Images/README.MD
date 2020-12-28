@@ -4,8 +4,7 @@ This project shows how to use Office Scripts and Power Automate actions to re-ca
 
 ## Video link
 
-[Demo video](https://youtu.be/152GJyqc-Kw)
-
+[Demo video](https://youtu.be/152GJyqc-Kw)[![Watch step by step video](v_charts_image.jpg)]( "Watch step by step video")
 
 ## Scenario: 
 
