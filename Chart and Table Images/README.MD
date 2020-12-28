@@ -3,8 +3,7 @@
 This project shows how to use Office Scripts and Power Automate actions to re-calculate, create chart and extract images as base-64 string to be used later to send Email.
 
 ## Video link
-
-[Demo video](https://youtu.be/152GJyqc-Kw)[![Watch step by step video](v_charts_image.jpg)]( "Watch step by step video")
+[![Watch step by step video](v_charts_image.jpg)](https://youtu.be/152GJyqc-Kw "Watch step by step video")
 
 ## Scenario: 
 
