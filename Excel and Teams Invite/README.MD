@@ -4,8 +4,7 @@ This project shows how to use Office Scripts and Power Automate actions to selec
 
 ## Video link
 
-[Demo video](https://youtu.be/HyBdx52NOE8)
-
+[![Watch step by step video](v_teams_invite.jpg)](https://youtu.be/HyBdx52NOE8 "Watch step by step video")
 
 ## Scenario: 
 
