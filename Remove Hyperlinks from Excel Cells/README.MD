@@ -6,7 +6,8 @@
  *Note that this only works if the cell count is < 10k*
  
 ## Video 
-Checkout the video at: https://youtu.be/v20fdinxpHU
+
+[![Watch step by step video](v_hyperlinks.jpg)](https://youtu.be/v20fdinxpHU "Watch step by step video")
 
 ## Scenario
 
