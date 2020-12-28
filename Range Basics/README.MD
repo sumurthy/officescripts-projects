@@ -1,5 +1,22 @@
 # Range Basics: Get Methods
 
+Range is the foundational object within Office Script's Excel object model. Range APIs allows access to both data and format that available on the grid and links other key objects within Excel such as worksheets, tables, charts, etc. 
+
+Range is identified using its address such as "A1:B4" or using a named-item, which is a named key for a given set of cells. In Excel object model, both a cell and group of cells are referred as _range_. Range can contain cell level attributes such as data within a cell and also cell and cells-level attributes such as format, borders, etc. 
+Range can also be obtained via. users selection, which consists of at least one cell. As you interact with range, it is important to keep these cell and range relationship clear. 
+
+The following are core set of getter, setter and other useful methods most often used in scripts. This is a great starting point to begin the API jorney. The following sections divides the methods into easy to understand grouping and helps to build an easy mental model as you begin to unlock the range object's APIs. 
+
+## Video link 
+
+[Range basics]()
+
+## Office Script link 
+A collection of snippets showin in the video (doesn't do anything meaningful..)
+
+* [RangeBasics](RangeBasics.ts)
+
+
 ## Methods that return some range metadata 
 
 * getAddress(), getAddressLocal()
@@ -49,6 +66,8 @@
 
 --- Important/interesting---
 
+* _workbook_.getSelectedRange()
+* _workbook_.getActiveCell()
 * getUsedRange(valuesOnly)
 * getAbsoluteResizedRange(numRows, numColumns)
 * getOffsetRange(rowOffset, columnOffset)
