@@ -4,8 +4,7 @@ This project shows how to use Office Scripts to filter Excel table to get list o
 
 ## Video link
 
-[Demo video](https://youtu.be/Mv7BrvPq84A)
-
+[![Watch step by step video](v_filters.jpg)](https://youtu.be/Mv7BrvPq84A "Watch step by step video")
 
 ## Scenario: 
 
