@@ -15,7 +15,8 @@ https://powerusers.microsoft.com/t5/Power-Automate-Cookbook/Cross-Reference-and-
 
 ## Video link
 
-[Demo video](https://youtu.be/dVwqBf483qo)
+[![Watch step by step video](v_cross_ref_tables.jpg)](https://youtu.be/dVwqBf483qo "Watch step by step video")
+
 
 ## Office Scripts 
 
