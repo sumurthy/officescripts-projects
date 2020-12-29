@@ -16,7 +16,7 @@ _After clearing column filter_
 
 ## Excel file 
 
-This example can be applied to any Excel table. For the convenience sake, you can use the fillowing file: 
+This example can be applied to any Excel file with a table. For the convenience sake, you can use the fillowing file: 
 
 * [Input Excel file](Table-With-Filter.xlsx)
 
