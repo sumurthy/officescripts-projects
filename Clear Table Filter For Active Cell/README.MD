@@ -4,6 +4,10 @@ This script clears the table columhn filter based on active cell location. The s
 
 If you wish to learn more about how to save the filter prior to clearing it (and apply back later), do checkout more advanced sample [here](../Move%20Rows%20Across%20Tables).
 
+## Video 
+
+Checkout [Range basics topic](../Range%20Basics)
+
 ## Screenshots 
 
 _Before clearing column filter (notice the active cell)_
