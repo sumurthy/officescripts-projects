@@ -10,7 +10,7 @@ function main(workbook: ExcelScript.Workbook) {
       console.log("The selection is not in a table.");
       return;
     }
-    // Get table (since it is a )
+    // Get table (since it is already determined that there is only a single table part of the selection )
     const currentTable = tables[0];
 
     console.log(currentTable.getName());
