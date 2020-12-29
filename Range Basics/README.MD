@@ -107,8 +107,12 @@ A collection of snippets showin in the video (doesn't do anything meaningful..)
 * setNumberFormatsLocal(numberFormatsLocal)
 * setValues(values)
 
-# Other methods 
+## Other methods 
 
 * merge(across)
 * unmerge()
+
+## Coming soon 
+
+* Range edge APIs
 
