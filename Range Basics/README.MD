@@ -23,7 +23,7 @@ A collection of snippets showin in the video (doesn't do anything meaningful..)
 * getCellCount()
 * getRowCount(), getColumnCount()
 
-## Methods that returns data/constants associated with a giben range 
+## Methods that returns data/constants associated with a given range 
 
 ### Returned as singular cell value
 
