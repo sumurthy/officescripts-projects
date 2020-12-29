@@ -1,4 +1,4 @@
-# Clear table filter based on active cell location 
+# Clear table column filter based on active cell location 
 
 This script clears the table columhn filter based on active cell location. The script detects if the cell is part of a table and then determines the table column and clears any filter that may be applied on it. 
 
