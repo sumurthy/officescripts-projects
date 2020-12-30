@@ -10,6 +10,8 @@
 
 ### Avoid slow operations in the lopp
 
+Certain operations when done inside/around the loop statements such as `for`, `for..of`, `map`, `forEach`, etc. can lead to slow performance. Avoid the following patterns:
+
 * `console.log` in the loop slows down the script 
 
 ```ts
