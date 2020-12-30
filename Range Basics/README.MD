@@ -15,6 +15,8 @@ The following are core set of getter, setter and other useful methods most often
 
 * [Basic read and write](ReadWriteBasics.ts)
 * [Clear column filter](../Clear%20Table%20Filter%20For%20Active%20Cell/ClearFilterFromCell.ts)
+* [Color each cell withunique color](ColorCells.ts): shows how to iterate over cells and perform operations 
+
 
 ## Office Script link 
 A collection of snippets showin in the video (doesn't do anything meaningful..)
