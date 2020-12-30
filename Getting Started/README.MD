@@ -114,10 +114,6 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-
-
-## Error handling 
-
 ## Basic performance 
 
 ### Avoid slow operations in the lopp
