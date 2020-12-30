@@ -2,7 +2,7 @@
 
 This repository contains [Office Scripts](https://docs.microsoft.com/office/dev/scripts/overview/excel) based automation solutions that helps end users achieve automation of daily tasks. It contains realistic scenarios that business users face and provides detailed solution along with step-by-step instructional video links. 
 
-For each of the following projects, check out the folders for description, source code, step-by-step **Youtube videos** for select projects. 
+For each of the following projects, check out the folders for description, source code, step-by-step [**Youtube videos**](https://www.youtube.com/playlist?list=PLr3zVPZrMOUMl88fs8uc2GGAePRnNe6m0) for select projects. 
 
 ## Basics 
 
@@ -15,7 +15,7 @@ For each of the following projects, check out the folders for description, sourc
 
 ## Beyond Basics 
 
-Check out the following end to end project that automates sample scenarios. 
+Check out the following end to end project that automates sample scenarios along with full scripts, sample Excel files used, and [videos](https://www.youtube.com/playlist?list=PLr3zVPZrMOUMl88fs8uc2GGAePRnNe6m0).
 
 | Project | Details |
 |---------|---------|
