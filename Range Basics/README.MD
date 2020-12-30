@@ -9,7 +9,7 @@ The following are core set of getter, setter and other useful methods most often
 
 ## Video link 
 
-[Range basics]()
+[![Watch step by step video](v_rangebasics.jpg)](https://youtu.be/4emjkOFdLBA "Watch step by step video")
 
 ## Scripts 
 
