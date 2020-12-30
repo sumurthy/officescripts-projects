@@ -8,7 +8,10 @@ For each of the following projects, check out the folders for description, sourc
 
 | Project | Details |
 |---------|---------|
+| [Basics of Office Script and getting started](Getting%20Started)    | Learn about the Office Script language, basics of the object model, performance tips, error handling, etc. (..in progress..)   |
 | [Learn about the Excel Range object](Range%20Basics)    | This article shows the basics of using Range object and its APIs. This is a foundational topic that'll be used across all other projects. Start here...   |
+
+[Official documentation site](https://docs.microsoft.com/office/dev/scripts/)
 
 ## Beyond Basics 
 
