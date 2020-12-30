@@ -15,7 +15,8 @@ The following are core set of getter, setter and other useful methods most often
 
 * [Basic read and write](ReadWriteBasics.ts)
 * [Clear column filter](../Clear%20Table%20Filter%20For%20Active%20Cell/ClearFilterFromCell.ts)
-* [Color each cell withunique color](ColorCells.ts): shows how to iterate over cells and perform operations 
+* [Color each cell with unique color](ColorCells.ts): shows how to iterate over cells and perform operations 
+* [Update range with values using 2D array](Update2DValues.ts): dynamically calculates the range dimension to update based on 2D array values. 
 
 
 ## Office Script link 
