@@ -4,4 +4,4 @@ This is a script contributed by [Leslie Black](https://www.linkedin.com/in/lesbl
 
 Enjoy! 
 
-[![Watch this in action](seasons.jpg)](https://youtu.be/HBiGEkzmkgo "Enjoy!")
+[![Watch this in action](seasons.png)](https://youtu.be/HBiGEkzmkgo "Enjoy!")
