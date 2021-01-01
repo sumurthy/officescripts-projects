@@ -31,6 +31,11 @@ Check out the following end to end project that automates sample scenarios along
 | [Remove hyperlink from Excel cells](Remove%20Hyperlinks%20from%20Excel%20Cells)    | This sample clears all of the hyperlink from the current worksheet. It traverses through the worksheet and if there is any hyperlink associated with the cell, it cleares the hyperlink and retains the cell value as is. Logs the time it takes to complete traversal. |
 | [Output Excel table data as array of objects (as JSON) with hyperlink data for usage in Power Automate](Return%20Table%20Data%20as%20Array%20of%20Objects)    | Output Excel table data as array of objects (as JSON) for usage in Power Automate. Contains two samples - one that extracts basic text values and a second one that extracts hyperlink value instead of the text value for one of the columns. |
 
+## Community contributions 
+
+| Project | Details |
+|---------|---------|
+| [Seasons greetings animation project](Community%20Projects/Seasons%20Greetings)    | This is a script contributed by Leslie Black that creates Holidays theme animation in Excel using Office Scripts.   |
 
 ## Try it out yourself
 
