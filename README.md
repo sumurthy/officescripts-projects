@@ -35,7 +35,7 @@ Check out the following end to end project that automates sample scenarios along
 
 | Project | Details |
 |---------|---------|
-| [Seasons greetings animation project](Community%20Projects/Seasons%20Greetings)    | This is a script contributed by Leslie Black that creates Holidays theme animation in Excel using Office Scripts.   |
+| [Seasons greetings animation project](Community%20Projects/Seasons%20Greetings)    | This is a script contributed by [Leslie Black](https://www.linkedin.com/in/lesblackconsultant/) that creates Holidays theme animation in Excel using Office Scripts.   |
 
 ## Try it out yourself
 
