@@ -282,3 +282,5 @@ The `setValues()` may fail resulting in the script failure. You may wish to hand
 
 ```
 
+*Warning* - Using `try..catch` inside of a loop will slow down your script. Avoid using this inside of or around loops. 
+
