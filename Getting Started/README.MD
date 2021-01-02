@@ -120,6 +120,13 @@ function main(workbook: ExcelScript.Workbook) {
 
 Certain operations when done inside/around the loop statements such as `for`, `for..of`, `map`, `forEach`, etc. can lead to slow performance. Avoid the following patterns:
 
+* `get*` APIs 
+
+Read all the data you need outside of the loop rather than reading it inside of the loop. At times, it is hard to avoid reading inside of loops - in such a case, make sure your loop counts are  not too large or manage them in batches to avoid having to loop through a large data structure. 
+
+
+[![Read and write optimization tip](v_perf.jpg)](https://youtu.be/lsR_GvVW3Pg "Read and write optimization tip")
+
 * `console.log` in the loop slows down the script 
 
 ```ts
@@ -140,13 +147,5 @@ Certain operations when done inside/around the loop statements such as `for`, `f
 * `try {} catch ()` statement 
 
 Avoid exception handling for loops. Both inside and outside loops. 
-
-
-* `get*` APIs 
-
-Read all the data you need outside of the loop rather than reading it inside of the loop. At times, it is hard to avoid reading inside of loops - in such a case, make sure your loop counts are  not too large or manage them in batches to avoid having to loop through a large data structure. 
-
-
-[![Read and write optimization tip](v_perf.jpg)](https://youtu.be/lsR_GvVW3Pg "Read and write optimization tip")
 
 ## 
