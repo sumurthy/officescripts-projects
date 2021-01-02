@@ -116,7 +116,7 @@ function main(workbook: ExcelScript.Workbook) {
 
 ## Range basics 
 
-Checkout the [Range Basics(Range%Basics) before you go further on your journey. 
+Checkout the [Range Basics(../Range%Basics) before you go further on your journey. 
 
 ## Basic performance 
 
