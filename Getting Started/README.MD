@@ -118,7 +118,7 @@ function main(workbook: ExcelScript.Workbook) {
 
 Checkout the [Range Basics](../Range%20Basics) before you go further on your journey. 
 
-## Basic performance 
+## Basic performance considerations
 
 ### Avoid slow operations in the loop
 
