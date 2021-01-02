@@ -4,6 +4,31 @@ Office Scripts is written using [TypeScript language](https://www.typescriptlang
 
 The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it to get started. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along.  
 
+## Note to VBA developers
+
+TypeScript language differs from VBA both syntactically as well in naming conventions.
+
+Checkout the following snippets that achieves the same thing:
+
+```vba
+Worksheets("Sheet1").Range("A1:G37").Clear
+```
+
+```ts
+workbook.getWorksheet('Sheet1').getRange('A1:G37').clear(ExcelScript.ClearApplyTo.all);
+```
+
+Few things to call out are: 
+
+* You'll notice that all methods will need have open/close parenthesis to execute. Arguments are passed identically - but some arguments may be are required for execution (required vs optional). 
+* The naming convention follows camelCase as opposed to PascalCase convention. 
+* Methods usually have get or set prefixes indicating whether it is reading or writing object members. 
+* The code blocks are defined and identified by open/close of curly braces: `{` `}`. Blocks are required for `if` conditions, `while`, `for` loops, function definition, etc. 
+* Functions can call other functions and you can even define functions within a function. 
+
+Overall, TypeScript is a different languages and there are few similarties between them. However, the Office Scripts API themsleves uses similar terminology and data-model (OM) hierarchy as VBA APIs and that should help you navigate around. 
+
+
 ## Definining types 
 
 Type declarations help users understand the type of variable they are dealing with. It helps with auto completion of methods and assists in development time quality checks. 
