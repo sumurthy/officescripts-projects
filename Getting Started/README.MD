@@ -152,4 +152,133 @@ Read all the data you need outside of the loop rather than reading it inside of 
 
 Avoid exception handling for loops. Both inside and outside loops. 
 
-## 
+## Error handling 
+
+### Do pre-checks at the beginning of the script
+
+As a best practice, always ensure that all your inputs are present in the Excel file prior to running your script. You may have made certian assumptions about objects being present in the workbook. If those objects don't exist, your script may encouter an error when you read the object or its data. Rather than beginning the processing and erroring in the middle after part of the updates/processing has already finished, it is better to do all pre-checks at the start of the script. 
+
+Example: 
+
+The following script requires two tables by the name of Table1 and Table2 to be present. Hence it checks their presence and ends the script with `return` statement if they are not present with appropriate message. 
+
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+
+  // Tables that should be part of the workbook for the script to work:
+  const TargetTableName = 'Table1';
+  const SourceTableName = 'Table2';
+
+  // Get the table objects
+  let targetTable = workbook.getTable(TargetTableName);
+  let sourceTable = workbook.getTable(SourceTableName);
+
+
+  if (!targetTable || !sourceTable) {
+    console.log(`Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `);
+    return;
+  }
+  // Continue....
+
+```
+
+If the verification to ensure input data is present or not is happening in a separate function, it is important to end the script by issueing `return` statement from the `main` function. 
+
+For example, `main` function calls `inputPresent` function to do the pre-checks. The `inputPresent` just returns a boolean (true or false) indicating whether all required inputs are present or not. It is the then the responsibility of the `main` function to issue `return` statement (from within same the `main` function) to end the script immediately. 
+
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+
+  // Get the table objects
+  if (!inputPresent(workbook)) {
+    return;
+  }
+  // Continue....
+
+}
+
+function inputPresent( workbook: ExcelScript.Workbook): boolean {
+
+  // Tables that should be part of the workbook for the script to work:
+  const TargetTableName = 'Table1';
+  const SourceTableName = 'Table2';
+
+  // Get the table objects
+  let targetTable = workbook.getTable(TargetTableName);
+  let sourceTable = workbook.getTable(SourceTableName);
+
+  if (!targetTable || !sourceTable) {
+    console.log(`Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `);
+    return false;
+  }
+  return true; 
+
+}
+```
+
+### When to abort the script - applicable for scripts used in Power Automation flow
+
+If your script is running as part of Power Automation, you may wish to abort the flow if certain conditions are not met. It is therefore important to not `return` upon an error but rather issue `throw` statement to abort the script so that following step doesn't run. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+
+  // Tables that should be part of the workbook for the script to work:
+  const TargetTableName = 'Table1';
+  const SourceTableName = 'Table2';
+
+  // Get the table objects
+  let targetTable = workbook.getTable(TargetTableName);
+  let sourceTable = workbook.getTable(SourceTableName);
+
+
+  if (!targetTable || !sourceTable) {
+    // Abort script
+    throw `Tables missing - Check to make sure both source (${TargetTableName}) and target table (${SourceTableName}) are present before running the script. `;
+  }
+  
+```
+
+
+### When to use try..catch (throw exception)
+
+For the most part, you don't need to use [`try..catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) in your script. This is because the script's purpose here is to inform the user that script failed to run due to the absence of input data. Returning with an error message is sufficient in most cases and it lot simpler to simply `return` out of the `main` function. 
+
+However under certain conditions, it may be important to check the return value of an API to verify that it completed successfully. 
+
+Example: consider following snippet -
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+
+  // somewhere in the script, perform a large data update
+  range.setValues(someLargeValues);
+
+}
+```
+
+The `setValues()` may fail resulting in the script failure. You may wish to handle this condition in your code and perhaps customize the error message or break-up the update into smaller units, etc. In that case, it is important to know that the API returned an error and interpret or handle that error. 
+
+```ts
+    try {
+        range.setValues(someLargeValues);
+    } catch (error) {
+        console.log(`The script failed to update the values at location ____. Please inspect and run again.`);        
+        console.log(error);      
+        return; // End script (assuming this is in main function)  
+    }
+
+    // or...
+
+    try {
+        range.setValues(someLargeValues);
+    } catch (error) {
+        console.log(`The script failed to update the values at location ____. Trying a different approach`);        
+        handleUpdatesInSmallerChunks(someLargeValues);
+    }
+    // Continue
+
+```
+
