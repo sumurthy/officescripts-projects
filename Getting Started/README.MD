@@ -1,12 +1,25 @@
 # Getting started 
 
-Office Scripts is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
+[Office Scripts](https://docs.microsoft.com/office/dev/scripts/) is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
 
 The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it use automation. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along and make small edits.  
 
 ## Environment 
 
+### Access
+
+Office Scripts requires a admin settings available for M365 administrator under Settings > Org settings > Office Scripts. By default, it is turned on for all users. There are two sub settings, which the admin can turn on/off. 
+
+* Ability to share scripts within the organization
+* Ability to use scripts in Power Automation
+
+You can tell if one has access to Office Scripts by opening an Excel file on the web (browser) and seeing if "Automate" tab appears in the Excel ribbon or not. 
+If you still can't see the Automate tab, check [this troubleshooting section](https://docs.microsoft.com/office/dev/scripts/testing/troubleshooting#automate-tab-not-appearing-or-office-scripts-unavailable).
+
+### Availability 
 Office Scripts is available only in the Excel for web for Enterprise E3+ liceses (Consumer, E1 accounts are not supported).  Excel desktop/MacOS versions are not yet supported. 
+
+### Scripts and editor
 
 The code editor is built right into Excel for web (online version). If you have used VS Code or Sublime editors, this editing expereince will be quite similar. 
 Most of the short-cut keys that VS Code editor uses works in the Office Script editing experience as well. Checkout the following short-cut keys handout: 
