@@ -16,11 +16,12 @@ Most of the short-cut keys that VS Code editor uses works in the Office Script e
 _Key things to note_
 
 * Office Scripts is only available for files stored in OneDrive for Business, SharePoint sites, Team sites.
-* The file (script) selection expereince is custom - you don't get the file browser in the left pane. 
 * The editor doesn't show the script's extension. In reality these are TypeScript files - but they are stored with a custom extension called `.osts`. 
 * The scripts are stored in your own OneDrive for Business folder `My Files/Documents/OfficeScripts`. You'll not need to manage this folder. For your part, you can ignore this aspect as the editor manages the viewing/editing expereince.
 * Scripts are not stored as part of Excel files. They are stored separetely. 
 * You can share the script with an Excel file - which in affect means you are linking the script with the file (not attaching it). Whoever has access to the Excel file will also be able to 'view' or 'run' or 'make copy' of the script. This is a key difference compared to VBA macros. 
+* Unless you share your scripts, no one else can access it as it resides in your own library. 
+* Scripts cannot be linked from a local disk or custom cloud locations. Office Scripts only recognizes/runs script that are on pre-defined location (your OneDrive folder mentioned above) or shared scripts. 
 * While editing, files are temporarily saved in the browser - but you'll have to 'save' the script before closing the Excel window to save it to the OneDrive loction. Don't forget to save the file after edits. 
 
 ## Note to VBA developers
