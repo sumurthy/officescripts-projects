@@ -48,10 +48,13 @@ Check out the following end to end project that automates sample scenarios along
 
 The project is open sourced. Try it out yourself. You'll need Microsoft (Office) 365 account from work or school with E3 or above license. Just head over to https://office.com to sign-in to your account and get started.
 
+## Contact
+
+To be clear, I work for the Office Scripts product team. I also am passionate about automation solutions, web based solutions, TypeScript/JavaScript technologies 
+* [LinkedIn](https://www.linkedin.com/in/rsudhi/)
+* [Twitter](https://twitter.com/rsudhi)
+
+
 ## Leave a comment
 Feel free to leave a comment or make a suggestion or log an issue by [opening a new issue](https://github.com/sumurthy/officescripts-projects/issues).
 
-Contact: 
-
-* [LinkedIn](https://www.linkedin.com/in/rsudhi/)
-* [Twitter](https://twitter.com/rsudhi)
