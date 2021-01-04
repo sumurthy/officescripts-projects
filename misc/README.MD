@@ -8,7 +8,7 @@ Office Scripts doesn't yet offer a full-screen detachable editor. In the meantim
 1. Download the intellisence (code completion assistance) [file](index.d.ts) to your local machine into a base folder from where you'll edit your script files. 
 1. You can see below that I have saved this file to a folder called OS. In here, I can start authoring the script and I get code completion. Sub-folders also pickup code completion. Of course, I can’t test or run the code from here. For that I still have to copy/paste the code back to Code editor within Excel on the browser. 
 1. The key is to name the script file locally with .ts extension. Otherwise, the code completion doesn’t work. This only works with VS Code editor. 
-1. This is a not so great workaround to get larger editor.. but I personally use it when I’m editing a large script. 
+1. This is a not so great workaround.. but meets the need to just edit in a larger surface area. I personally use it when I’m editing a large script. 
 
 ![Editor](editor.png)
 
