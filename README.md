@@ -8,7 +8,7 @@ For each of the following projects, check out the folders for description, sourc
 
 | Project | Details |
 |---------|---------|
-| [Basics of Office Script and getting started](Getting%20Started)    | Learn about the Office Script language, basics of the object model, performance tips, error handling, etc. (..in progress..)   |
+| [Basics of Office Script and getting started](Getting%20Started)    | Learn about the Office Script language, basics of the object model, performance tips, error handling, etc.   |
 | [Learn about the Excel Range object](Range%20Basics)    | This article shows the basics of using Range object and its APIs. This is a foundational topic that'll be used across all other projects. Start here...   |
 
 [Official documentation site](https://docs.microsoft.com/office/dev/scripts/)
@@ -30,6 +30,13 @@ Check out the following end to end project that automates sample scenarios along
 | [Send Teams meeting invite and update Excel](Excel%20and%20Teams%20Invite)    |  This project shows how to use Office Scripts and Power Automate actions to select rows from Excel file and use it to send Teams meeting invite and update back Excel. |
 | [Remove hyperlink from Excel cells](Remove%20Hyperlinks%20from%20Excel%20Cells)    | This sample clears all of the hyperlink from the current worksheet. It traverses through the worksheet and if there is any hyperlink associated with the cell, it cleares the hyperlink and retains the cell value as is. Logs the time it takes to complete traversal. |
 | [Output Excel table data as array of objects (as JSON) with hyperlink data for usage in Power Automate](Return%20Table%20Data%20as%20Array%20of%20Objects)    | Output Excel table data as array of objects (as JSON) for usage in Power Automate. Contains two samples - one that extracts basic text values and a second one that extracts hyperlink value instead of the text value for one of the columns. |
+
+
+## Performance 
+
+| Project | Details |
+|---------|---------|
+| [Performance related topics](Performance)    | Basic to advanced performance related topics (..in progress..)   |
 
 ## Community contributions 
 
