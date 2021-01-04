@@ -11,7 +11,7 @@ function main(workbook: ExcelScript.Workbook) {
  * A Helper function that computes the target range given the target range's starting cell and selected range. 
  */
 function computeTargetRange(targetCell: ExcelScript.Range, data: string[][]): ExcelScript.Range {
-  const targetRange = targetCell.getResizedRange(data[0].length - 1, data[0][0].length - 1);
+  const targetRange = targetCell.getResizedRange(data.length - 1, data[0].length - 1);
   return targetRange;
 }
 /**
