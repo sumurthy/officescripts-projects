@@ -11,6 +11,6 @@ The `setValues()` API of range allows setting the values of a range. This API wi
 
 It selects 1K cells per chunk -- but you can override to test out how it works for you. 
 
-* [Updating rows in chunks](UpdatingRowsInChunks.ts)
+* [Updating rows in chunks](UpdatingRowsInChunks.ts): It updates 1k rows with 6 columns of data. Run this on a blank sheet to examine. 
 
 
