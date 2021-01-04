@@ -33,8 +33,8 @@ function main(workbook: ExcelScript.Workbook) {
     ['2048', 'Bread', 'Donut', 500, 0.2],      
     ['2049', 'Bread', 'Donut', 500, 0.2],      
     ]
-
-  updateRangeInChunks(sheet.getRange("B1"), data, 23)
+  // Update the range with the above sample data. 
+  updateRangeInChunks(sheet.getRange("B1"), data, 23 /* play around with this setting. if you don't set it, default is 1K cells per chunk */)
 }
 
 function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boolean | number)[][], cellsInChunk: number = 1000): boolean {
