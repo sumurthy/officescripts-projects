@@ -1,40 +1,13 @@
 function main(workbook: ExcelScript.Workbook) {
   const sheet = workbook.getActiveWorksheet();
+  const sampleData = ['2020', 'Bread', 'Donut', 500, 0.2];
+  let data: (string | number | boolean)[][] = [];
+  const sampleRows = 10000;
+  for (let i=0; i < sampleRows; i++) {
+    data.push([i, ...sampleData]);
+  }
 
-  const data = [
-    ['2020', 'Bread', 'Donut', 500, 0.2],
-    ['2021', 'Bread', 'Donut', 500, 0.2],
-    ['2022', 'Bread', 'Donut', 500, 0.2],
-    ['2023', 'Bread', 'Donut', 500, 0.2],
-    ['2024', 'Bread', 'Donut', 500, 0.2],
-    ['2025', 'Bread', 'Donut', 500, 0.2],
-    ['2026', 'Bread', 'Donut', 500, 0.2],
-    ['2027', 'Bread', 'Donut', 500, 0.2],
-    ['2028', 'Bread', 'Donut', 500, 0.2],
-    ['2029', 'Bread', 'Donut', 500, 0.2],
-    ['2030', 'Bread', 'Donut', 500, 0.2],
-    ['2031', 'Bread', 'Donut', 500, 0.2],
-    ['2032', 'Bread', 'Donut', 500, 0.2],
-    ['2033', 'Bread', 'Donut', 500, 0.2],    
-    ['2034', 'Bread', 'Donut', 500, 0.2],
-    ['2035', 'Bread', 'Donut', 500, 0.2],
-    ['2036', 'Bread', 'Donut', 500, 0.2],
-    ['2037', 'Bread', 'Donut', 500, 0.2],
-    ['2038', 'Bread', 'Donut', 500, 0.2],
-    ['2039', 'Bread', 'Donut', 500, 0.2],
-    ['2040', 'Bread', 'Donut', 500, 0.2],
-    ['2041', 'Bread', 'Donut', 500, 0.2],
-    ['2042', 'Bread', 'Donut', 500, 0.2],
-    ['2043', 'Bread', 'Donut', 500, 0.2],
-    ['2044', 'Bread', 'Donut', 500, 0.2],    
-    ['2045', 'Bread', 'Donut', 500, 0.2],  
-    ['2046', 'Bread', 'Donut', 500, 0.2],      
-    ['2047', 'Bread', 'Donut', 500, 0.2],      
-    ['2048', 'Bread', 'Donut', 500, 0.2],      
-    ['2049', 'Bread', 'Donut', 500, 0.2],      
-    ]
-  // Update the range with the above sample data. 
-  updateRangeInChunks(sheet.getRange("B1"), data, 23 /* play around with this setting. if you don't set it, default is 1K cells per chunk */)
+  updateRangeInChunks(sheet.getRange("B1"), data)
 }
 
 function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boolean | number)[][], cellsInChunk: number = 1000): boolean {
