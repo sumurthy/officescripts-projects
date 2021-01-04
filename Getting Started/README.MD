@@ -6,6 +6,8 @@ The language syntax itself is written using [JavaScript](https://developer.mozil
 
 ## Environment 
 
+[![Basics of Office Scripts application](env.png)](https://youtu.be/vvCtxsjPxo8 "Basics of Office Scripts application")
+
 ### Access
 
 Office Scripts requires a admin settings available for M365 administrator under Settings > Org settings > Office Scripts. By default, it is turned on for all users. There are two sub settings, which the admin can turn on/off. 
@@ -62,7 +64,7 @@ Few things to call out are:
 Overall, TypeScript is a different languages and there are few similarties between them. However, the Office Scripts API themsleves uses similar terminology and data-model (OM) hierarchy as VBA APIs and that should help you navigate around. 
 
 
-## Anatomy of a script and APIs
+## Anatomy of a script and basic pattern
 
 
 ### Definining types 
