@@ -37,7 +37,7 @@ function main(workbook: ExcelScript.Workbook) {
   updateRangeInChunks(sheet.getRange("B1"), data, 23)
 }
 
-function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boolean | number)[][], cellsInChunk: number = 10): boolean {
+function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boolean | number)[][], cellsInChunk: number = 1000): boolean {
   console.log("Cells per chunk setting: " + cellsInChunk);
   if (!values.length) {
     console.log(`Invalid input values to update.`);
