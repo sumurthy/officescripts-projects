@@ -20,7 +20,7 @@ function updateRangeInChunks(
     cellsInChunk: number = 10000
     ): boolean {
     console.log(`Cells per chunk setting: ${cellsInChunk}`);
-    if (!values.length) {
+    if (!values) {
       console.log(`Invalid input values to update.`);
       return false;
     }
