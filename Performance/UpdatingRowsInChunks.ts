@@ -3,7 +3,7 @@ function main(workbook: ExcelScript.Workbook) {
   const sampleData = ['2020', 'Bread', 'Donut', 500, 0.2];
   let data: (string | number | boolean)[][] = [];
   const sampleRows = 10000;
-  for (let i=0; i < sampleRows; i++) {
+  for (let i = 0; i < sampleRows; i++) {
     data.push([i, ...sampleData]);
   }
 
@@ -29,7 +29,7 @@ function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boo
     return true;
   }
 
-   
+
   const rowsPerChunk = Math.floor(cellsInChunk / values[0].length);
   console.log("Rows per chunk " + rowsPerChunk);
   let rowCount = 0;
@@ -40,17 +40,19 @@ function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boo
     rowCount++;
     if (rowCount === rowsPerChunk) {
       chunkCount++;
-      console.log(`Calling update next chunk. Chunk#: ${chunkCount}`);
+      console.log(`Calling update next chunk function. Chunk#: ${chunkCount}`);
       updateNextChunk(startCell, values, rowsPerChunk, totalRowsUpdated);
       rowCount = 0;
       totalRowsUpdated += rowsPerChunk;
-    } 
+      console.log(`${(totalRowsUpdated/values.length)*100}% Done`);
+
+    }
   }
   console.log(`Updating remaining rows -- last chunk: ${rowCount}`)
   if (rowCount > 0) {
     updateNextChunk(startCell, values, rowCount, totalRowsUpdated);
   }
-
+  console.log(`Done with all updates.`);
   return true;
 }
 
@@ -59,12 +61,12 @@ function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boo
  */
 
 function updateNextChunk(startingCell: ExcelScript.Range, data: (string | boolean | number)[][], rowsPerChunk: number, totalRowsUpdated: number): boolean {
-  
+
   const newStartCell = startingCell.getOffsetRange(totalRowsUpdated, 0);
   const targetRange = newStartCell.getResizedRange(rowsPerChunk - 1, data[0].length - 1);
-  console.log(`Updating next chunk at range ${targetRange.getAddress()}`);
+  console.log(`Updating chunk at range ${targetRange.getAddress()}`);
   const dataToUpdate = data.slice(totalRowsUpdated, totalRowsUpdated + rowsPerChunk);
-  try { 
+  try {
     targetRange.setValues(dataToUpdate);
   } catch (e) {
     console.log(`Error while updating the chunk range: ${JSON.stringify(e)}`)
@@ -73,18 +75,17 @@ function updateNextChunk(startingCell: ExcelScript.Range, data: (string | boolea
   return true;
 }
 
-
 /**
  * A Helper function that computes the target range given the target range's starting cell and selected range and updates the values. 
  */
 function updateTargetRange(targetCell: ExcelScript.Range, values: (string | boolean | number)[][]): boolean {
   const targetRange = targetCell.getResizedRange(values.length - 1, values[0].length - 1);
   console.log(`Updating the range. ${targetRange.getAddress()}`);
-  try { 
+  try {
     targetRange.setValues(values);
   } catch (e) {
     console.log(`Error while updating the whole range: ${JSON.stringify(e)}`)
     return false;
-  }  
+  }
   return true;
 }
