@@ -12,10 +12,10 @@ Hope this helps!
 
 _No XLSM  in Excel Online connector_ 
 
-![No xlsm in Run Script action](no%xlsm.png)
+![No xlsm in Run Script action](no%20xlsm.png)
 
 
 _Use XLSM Macro file in Excel Online Run Script actinon_
 
-![xlsm in Run Script action](xlsm%in%pa.png)
+![xlsm in Run Script action](xlsm%20in%20pa.png)
 
