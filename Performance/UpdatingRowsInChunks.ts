@@ -57,7 +57,6 @@ function updateRangeInChunks(
         rowCount = 0;
         totalRowsUpdated += rowsPerChunk;
         console.log(`${(totalRowsUpdated/values.length)*100}% Done`);
-  
       }
     }
     console.log(`Updating remaining rows -- last chunk: ${rowCount}`)
@@ -68,10 +67,9 @@ function updateRangeInChunks(
     return true;
 }
   
-  /**
-   * A Helper function that computes the target range and updates. 
-   */
-  
+/**
+ * A Helper function that computes the target range and updates. 
+ */
 function updateNextChunk(
       startingCell: ExcelScript.Range, 
       data: (string | boolean | number)[][], 
@@ -91,9 +89,9 @@ function updateNextChunk(
     return;
 }
   
-  /**
-   * A Helper function that computes the target range given the target range's starting cell and selected range and updates the values. 
-   */
+/**
+ * A Helper function that computes the target range given the target range's starting cell and selected range and updates the values. 
+ */
 function updateTargetRange(
       targetCell: ExcelScript.Range, 
       values: (string | boolean | number)[][]
