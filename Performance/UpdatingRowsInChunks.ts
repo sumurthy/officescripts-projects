@@ -46,7 +46,7 @@ function updateRangeInChunks(startCell: ExcelScript.Range, values: (string | boo
       totalRowsUpdated += rowsPerChunk;
     } 
   }
-  console.log(rowCount)
+  console.log(`Updating remaining rows -- last chunk: ${rowCount}`)
   if (rowCount > 0) {
     updateNextChunk(startCell, values, rowCount, totalRowsUpdated);
   }
