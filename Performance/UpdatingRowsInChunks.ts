@@ -3,7 +3,7 @@ function main(workbook: ExcelScript.Workbook) {
 
   let data: (string | number | boolean)[][] = [];
   // Number of rows in the random data (x 6 columns)
-  const sampleRows = 100;
+  const sampleRows = 10000;
 
   console.log(`Generating data...`)
   // Dynamically generate some random data for testing purpose. 
@@ -11,11 +11,12 @@ function main(workbook: ExcelScript.Workbook) {
     data.push([i, ...[getRandomString(5), getRandomString(20), getRandomString(10), Math.random()], "Sample data"]);
   }
 
-  console.log(`Calling update range function...`)
-  const updated = updateRangeInChunks(sheet.getRange("B2"), data, 25);
+  console.log(`Calling update range function...`);
+  const updated = updateRangeInChunks(sheet.getRange("B2"), data);
   if (!updated) {
     console.log(`Update did not take place or complete. Chech and run again.`)
   }
+
   return;
 }
 
@@ -25,6 +26,7 @@ function updateRangeInChunks(
   cellsInChunk: number = 10000
 ): boolean {
 
+  const startTime = new Date().getTime();
   console.log(`Cells per chunk setting: ${cellsInChunk}`);
   if (!values) {
     console.log(`Invalid input values to update.`);
@@ -57,7 +59,7 @@ function updateRangeInChunks(
       updateNextChunk(startCell, values, rowsPerChunk, totalRowsUpdated);
       rowCount = 0;
       totalRowsUpdated += rowsPerChunk;
-      console.log(`${(totalRowsUpdated / values.length) * 100}% Done`);
+      console.log(`${((totalRowsUpdated / values.length) * 100).toFixed(1)}% Done`);
 
     }
   }
@@ -65,7 +67,10 @@ function updateRangeInChunks(
   if (rowCount > 0) {
     updateNextChunk(startCell, values, rowCount, totalRowsUpdated);
   }
-  console.log(`Done with all updates.`);
+
+  let endTime = new Date().getTime();
+  console.log(`Completed ${totalCells} cells update. It took: ${((endTime - startTime) / 1000).toFixed(6)} seconds to complete. ${((((endTime  - startTime) / 1000)) / cellsInChunk).toFixed(8)} seconds per ${cellsInChunk} cells-chunk.`);
+
   return true;
 }
 
