@@ -6,5 +6,16 @@ However, one of the limitation is that macro files cannot be selected in the fil
 '
 One way to get around this issue is by including "Get File Metadata" action (OneDrive or SharePoint) and use the ID property in the "Run Script" action as showin in the second screenshot. 
 
+_Note_: Some XLSM (esp. the ones with ActiveX/Form controls) may not work in Excel online connector. Be sure to test before deploying your solution. 
+
 Hope this helps! 
+
+_No XLSM  in Excel Online connector_ 
+
+![No xlsm in Run Script action](no%xlsm.png)
+
+
+_Use XLSM Macro file in Excel Online Run Script actinon_
+
+![xlsm in Run Script action](xlsm%in%pa.png)
 
