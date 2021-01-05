@@ -10,7 +10,11 @@ function main(workbook: ExcelScript.Workbook) {
     for (let i = 0; i < sampleRows; i++) {
       data.push([i, ...sampleData]);
     }
-    updateRangeInChunks(sheet.getRange("B1"), data);
+    
+    const updated = updateRangeInChunks(sheet.getRange("B1"), data);
+    if (!updated) {
+        console.log(`Update did not take place or complete. Chech and run again.`)
+    }
     return;
 }
   
@@ -19,6 +23,7 @@ function updateRangeInChunks(
     values: (string | boolean | number)[][], 
     cellsInChunk: number = 10000
     ): boolean {
+
     console.log(`Cells per chunk setting: ${cellsInChunk}`);
     if (!values) {
       console.log(`Invalid input values to update.`);
@@ -36,7 +41,6 @@ function updateRangeInChunks(
       updateTargetRange(startCell, values);
       return true;
     }
-  
   
     const rowsPerChunk = Math.floor(cellsInChunk / values[0].length);
     console.log("Rows per chunk " + rowsPerChunk);
