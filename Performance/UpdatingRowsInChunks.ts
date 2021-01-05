@@ -1,15 +1,20 @@
 function main(workbook: ExcelScript.Workbook) {
     const sheet = workbook.getActiveWorksheet();
+
+    // Sample data that'll be repeated in range
     const sampleData = ['2020', 'Bread', 'Donut', 500, 0.2];
     let data: (string | number | boolean)[][] = [];
+    // Number of rows in the random data (x 6 columns)
     const sampleRows = 10000;
+    // Dynamically generate some random data for testing purpose. 
     for (let i = 0; i < sampleRows; i++) {
       data.push([i, ...sampleData]);
     }
     updateRangeInChunks(sheet.getRange("B1"), data);
-  }
+    return;
+}
   
-  function updateRangeInChunks(
+function updateRangeInChunks(
     startCell: ExcelScript.Range, 
     values: (string | boolean | number)[][], 
     cellsInChunk: number = 10000
@@ -57,18 +62,18 @@ function main(workbook: ExcelScript.Workbook) {
     }
     console.log(`Done with all updates.`);
     return true;
-  }
+}
   
   /**
    * A Helper function that computes the target range and updates. 
    */
   
-  function updateNextChunk(
+function updateNextChunk(
       startingCell: ExcelScript.Range, 
       data: (string | boolean | number)[][], 
       rowsPerChunk: number, 
       totalRowsUpdated: number
-    ): boolean {
+    ) {
   
     const newStartCell = startingCell.getOffsetRange(totalRowsUpdated, 0);
     const targetRange = newStartCell.getResizedRange(rowsPerChunk - 1, data[0].length - 1);
@@ -77,26 +82,24 @@ function main(workbook: ExcelScript.Workbook) {
     try {
       targetRange.setValues(dataToUpdate);
     } catch (e) {
-      console.log(`Error while updating the chunk range: ${JSON.stringify(e)}`)
-      return false;
+      throw `Error while updating the chunk range: ${JSON.stringify(e)}`;
     }
-    return true;
-  }
+    return;
+}
   
   /**
    * A Helper function that computes the target range given the target range's starting cell and selected range and updates the values. 
    */
-  function updateTargetRange(
+function updateTargetRange(
       targetCell: ExcelScript.Range, 
       values: (string | boolean | number)[][]
-    ): boolean {
+    ) {
     const targetRange = targetCell.getResizedRange(values.length - 1, values[0].length - 1);
     console.log(`Updating the range. ${targetRange.getAddress()}`);
     try {
       targetRange.setValues(values);
     } catch (e) {
-      console.log(`Error while updating the whole range: ${JSON.stringify(e)}`)
-      return false;
+      throw `Error while updating the whole range: ${JSON.stringify(e)}`;
     }
-    return true;
-  }
+    return;
+}
