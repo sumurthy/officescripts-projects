@@ -282,9 +282,11 @@ function inputPresent( workbook: ExcelScript.Workbook): boolean {
 }
 ```
 
-### When to abort the script - applicable for scripts used in Power Automation flow
+### When to abort (throw) the script  
 
-If your script is running as part of Power Automation, you may wish to abort the flow if certain conditions are not met. It is therefore important to not `return` upon an error but rather issue `throw` statement to abort the script so that following step doesn't run. 
+For the most part, you don't need to abort (`throw`) from your script. This is because the script's purpose here is to inform the user that script failed to run due to the absence of input data. Ending the script with an error message is sufficient in most cases and is lot simpler to simply `return` out of the `main` function. 
+
+However, if your script is running as part of Power Automation, you may want to abort the flow if certain conditions are not met. It is therefore important to not `return` upon an error but rather issue `throw` statement to abort the script so that following step doesn't run. 
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
@@ -305,12 +307,11 @@ function main(workbook: ExcelScript.Workbook) {
   
 ```
 
+As mentioned in the following section, another scenario is when you have a several functions involved (main calls functionX which calls functionY, etc.) which makes it hard to propagate the error. Aborting/throwing from the nested function with a message may be easier than returning error all the way up to `main` and returning from `main` with an error message. 
 
 ### When to use try..catch (throw exception)
 
-For the most part, you don't need to use [`try..catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) in your script. This is because the script's purpose here is to inform the user that script failed to run due to the absence of input data. Returning with an error message is sufficient in most cases and it lot simpler to simply `return` out of the `main` function. 
-
-However under certain conditions, it may be important to check the return value of an API to verify that it completed successfully. 
+[`try..catch`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) technique is a way to detect if an API call failed and handling the such error in your script. It may be important to check the return value of an API to verify that it completed successfully. 
 
 Example: consider following snippet -
 
@@ -343,6 +344,38 @@ The `setValues()` may fail resulting in the script failure. You may wish to hand
         handleUpdatesInSmallerChunks(someLargeValues);
     }
     // Continue
+
+```
+
+Another scenario is when main function calls another funciton, which in-turn calls another function (and so on..) and the API call that you care about happens down in the bottom function. Propagating error up all the way to `main` may not be feasible or convenient. In that case, throwing error in the bottom function will be most convenient. 
+
+```ts
+
+function main(workbook: ExcelScript.Workbook) {
+    ...
+    updateRangeInChunks(sheet.getRange("B1"), data);
+    ...
+}
+
+function updateRangeInChunks(
+    ...
+    updateNextChunk(startCell, values, rowsPerChunk, totalRowsUpdated);
+    ...
+}
+
+function updateTargetRange(
+      targetCell: ExcelScript.Range, 
+      values: (string | boolean | number)[][]
+    ) {
+    const targetRange = targetCell.getResizedRange(values.length - 1, values[0].length - 1);
+    console.log(`Updating the range. ${targetRange.getAddress()}`);
+    try {
+      targetRange.setValues(values);
+    } catch (e) {
+      throw `Error while updating the whole range: ${JSON.stringify(e)}`;
+    }
+    return;
+}
 
 ```
 
