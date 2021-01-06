@@ -3,7 +3,7 @@ function main(workbook: ExcelScript.Workbook) {
 
   let data: (string | number | boolean)[][] = [];
   // Number of rows in the random data (x 6 columns)
-  const sampleRows = 10000;
+  const sampleRows = 100000;
 
   console.log(`Generating data...`)
   // Dynamically generate some random data for testing purpose. 
