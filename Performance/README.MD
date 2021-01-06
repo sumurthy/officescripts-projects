@@ -13,4 +13,4 @@ It selects 1K cells per chunk -- but you can override to test out how it works f
 
 * [Updating rows in chunks](UpdatingRowsInChunks.ts): It updates 1k rows with 6 columns of data. Run this on a blank sheet to examine. 
 
-
+[![Large range data update](v_largedata.png)](https://youtu.be/BP9Kp0Ltj7U)
