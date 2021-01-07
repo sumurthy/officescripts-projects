@@ -11,6 +11,7 @@ Office Scripts doesn't yet offer a full-screen detachable editor. In the meantim
 1. Next add triple-slash directive to the script on line-1. `/// <reference path="{path to index.d.ts}" />`. Example: `/// <reference path="index.d.ts" />`
 1. Then, I can start authoring the script and I get code completion. Change the `path to index.d.ts` depending on where your script is. See the image below where the `index.d.ts` is one level above and the `path` directs to it. 
 1. Of course, I can’t test or run the code from here. For that I still have to copy/paste the code back to Code editor within Excel on the browser. 
+1. Make sure you remove the `/// <reference path="{path to index.d.ts}" />` line before copying code back to Office Scripts code editor in Excel.
 1. This is a not so great workaround.. but meets the need to just edit in a larger surface area. I personally use it when I’m editing a large script. 
 
 ![Editor](editor2.png)
