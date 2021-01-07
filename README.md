@@ -51,7 +51,7 @@ The project is open sourced. Try it out yourself. You'll need Microsoft (Office)
 
 ## Contact
 
-I work for the Office Scripts product team. I also am passionate about automation solutions, web based solutions, TypeScript/JavaScript technologies and hence my motiviation to add these content both as a way to test the product I work on and also contribute samples that others can use. I won't mind if you send any negative feedback on the product/code/content. Feel free to log your comments in issues. 
+I work for the Office Scripts product team. I'm eager to get feedback on the features I work on. I'm also passionate about automation, web based solutions, TypeScript/JavaScript technologies and hence my motiviation to add these content both as a way to test the product I work on and also contribute samples that others can use. I welcome any feedback you can send, positive or negative, on the product/code/content. Feel free to log your comments in issues. 
 
 * [LinkedIn](https://www.linkedin.com/in/rsudhi/)
 * [Twitter](https://twitter.com/rsudhi)
