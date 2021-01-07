@@ -13,7 +13,7 @@ Office Scripts doesn't yet offer a full-screen detachable editor. In the meantim
 1. Of course, I can’t test or run the code from here. For that I still have to copy/paste the code back to Code editor within Excel on the browser. 
 1. This is a not so great workaround.. but meets the need to just edit in a larger surface area. I personally use it when I’m editing a large script. 
 
-![Editor](editor1.png)
+![Editor](editor2.png)
 
 
 
