@@ -69,13 +69,15 @@ As you can see below, `main` funciton is the entry point to any script. It is im
 
 ### Use functions to organize and re-use code
 
+![Basics of Office Scripts](functions.png)] 
+
+### You can send or receive data from other apps 
 You can connect the Excel to other parts of your organization by running scripts in [Power Automation](https://flow.microsoft.com). [See here for more details](https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration) about running Office Scripts in Power Automation flows.
 
 The keys to receiving or sending data from/to Excel is through the main function. Think of it as the information gateway that allows incoming and outgoing data to be described and used in the script. You can receive data from outside in the form of `string` data type and return any TypeScript recognized data such as `string`, `number`, `boolean`, or any objects in the form of interface you define in the script. 
 
-### You can send or receive data from other apps 
+![Basics of Office Scripts](parts.png)] 
 
-![Basics of Office Scripts](functions.png)] 
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
