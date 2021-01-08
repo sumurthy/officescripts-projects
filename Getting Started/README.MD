@@ -4,6 +4,8 @@ This section provides details about the basics of Office Scripts including acces
 
 ## Environment 
 
+Learn about the basics access, environment, and script editor. 
+
 [![Basics of Office Scripts application](env.png)](https://youtu.be/vvCtxsjPxo8 "Basics of Office Scripts application")
 
 ### Access
@@ -57,13 +59,24 @@ Office Scripts APIs can be invoked in synchronously - no promises or callbacks. 
 * Optimized performance for select scenarios helping users to focus on the scenario at hand. 
 
 ### What does a script look like 
+
+As you can see below, `main` funciton is the entry point to any script. It is important to keep the first argument `workbook` and its type declaration as it appears. You can add new arguments to `main` function (See below section) - but do keep the first argument as is. 
+
+`main` funciton is the entry point for any script. When the function is executed, Excel application invokes this main function by providing the workbook as its first parameter. Hence, it is important to not modify the basic signature of the main function once you have either recorded the script or created a new script from the code editor.
+
 ![Basics of Office Scripts](parts.png)] 
 
 ### Use functions to organize and re-use code
-![Basics of Office Scripts](slook.png)] 
+
+You can connect the Excel to other parts of your organization by running scripts in [Power Automation](https://flow.microsoft.com). [See here for more details](https://docs.microsoft.com/en-us/office/dev/scripts/develop/power-automate-integration) about running Office Scripts in Power Automation flows.
+
+The keys to receiving or sending data from/to Excel is through the main function. Think of it as the information gateway that allows incoming and outgoing data to be described and used in the script. You can receive data from outside in the form of `string` data type and return any TypeScript recognized data such as `string`, `number`, `boolean`, or any objects in the form of interface you define in the script. 
+
+![Basics of Office Scripts](functions.png)] 
+
 
 ### You can send or receive data from other apps 
-![Basics of Office Scripts](functions.png)] 
+![Basics of Office Scripts](slook.png)] 
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
