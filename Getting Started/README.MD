@@ -1,8 +1,6 @@
 # Getting started 
 
-[Office Scripts](https://docs.microsoft.com/office/dev/scripts/) is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
-
-The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it use automation. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along and make small edits.  
+This section provides details about the basics of Office Scripts including access, environment, script fundamentals and few basic script patterns. 
 
 ## Environment 
 
@@ -39,33 +37,41 @@ _Key things to note_
 * Scripts cannot be linked from a local disk or custom cloud locations. Office Scripts only recognizes/runs script that are on pre-defined location (your OneDrive folder mentioned above) or shared scripts. 
 * While editing, files are temporarily saved in the browser - but you'll have to 'save' the script before closing the Excel window to save it to the OneDrive loction. Don't forget to save the file after edits. 
 
-## Note to VBA developers
-
-TypeScript language differs from VBA both syntactically as well in naming conventions.
-
-Checkout the following snippets that achieves the same thing:
-
-```vba
-Worksheets("Sheet1").Range("A1:G37").Clear
-```
-
-```ts
-workbook.getWorksheet('Sheet1').getRange('A1:G37').clear(ExcelScript.ClearApplyTo.all);
-```
-
-Few things to call out are: 
-
-* You'll notice that all methods will need have open/close parenthesis to execute. Arguments are passed identically - but some arguments may be are required for execution (required vs optional). 
-* The naming convention follows camelCase as opposed to PascalCase convention. 
-* Methods usually have get or set prefixes indicating whether it is reading or writing object members. 
-* The code blocks are defined and identified by open/close of curly braces: `{` `}`. Blocks are required for `if` conditions, `while`, `for` loops, function definition, etc. 
-* Functions can call other functions and you can even define functions within a function. 
-
-Overall, TypeScript is a different languages and there are few similarties between them. However, the Office Scripts API themsleves uses similar terminology and data-model (OM) hierarchy as VBA APIs and that should help you navigate around. 
-
-
 ## Anatomy of a script and basic pattern
 
+Office Scripts consists of individual script files that are stand-alone and instructs Excel to perform some automation against the workbook it is executed on. All scripts are stored in separate files and stored on user's OneDrive folder. You can record a new script, edit recorded script or write a whole new script from the scratch all within built-in editor interface. The best part of scripts are that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setup are handled by the Office Scripts and it allows easy and fast access to automation thorugh simple API interface. 
+
+When you open any script, you will find few familar `main` function with set of instructions. This section helps provide anatomy of such a script: 
+
+### Language and syntax
+
+[Office Scripts](https://docs.microsoft.com/office/dev/scripts/) is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
+
+The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it use automation. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along and make small edits.  
+
+Office Scripts APIs can be invoked in synchronously - no promises or callbacks. ​It's designed for end users who may not have any programming background. API design provides: 
+
+* Simple object model with methods, getter/setters
+* Easy to access object collections as regular arrays.
+* Simple error handling options, and more. 
+* Optimized performance for select scenarios helping users to focus on the scenario at hand. 
+
+### What does a script look like 
+![Basics of Office Scripts](parts.png)] 
+
+### Use functions to organize and re-use code
+![Basics of Office Scripts](slook.png)] 
+
+### You can send or receive data from other apps 
+![Basics of Office Scripts](functions.png)] 
+
+Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
+
+* Understanding of `main` function and parameters.
+* Object hierarchy and relationships.
+* Basic read, write data to/from workbook.
+* Mehod invocation on objects.
+* Collection (array) navigation and operations. 
 
 ### Definining types 
 
@@ -381,3 +387,26 @@ function updateTargetRange(
 
 *Warning* - Using `try..catch` inside of a loop will slow down your script. Avoid using this inside of or around loops. 
 
+## Note to VBA developers
+
+TypeScript language differs from VBA both syntactically as well in naming conventions.
+
+Checkout the following snippets that achieves the same thing:
+
+```vba
+Worksheets("Sheet1").Range("A1:G37").Clear
+```
+
+```ts
+workbook.getWorksheet('Sheet1').getRange('A1:G37').clear(ExcelScript.ClearApplyTo.all);
+```
+
+Few things to call out are: 
+
+* You'll notice that all methods will need have open/close parenthesis to execute. Arguments are passed identically - but some arguments may be are required for execution (required vs optional). 
+* The naming convention follows camelCase as opposed to PascalCase convention. 
+* Methods usually have get or set prefixes indicating whether it is reading or writing object members. 
+* The code blocks are defined and identified by open/close of curly braces: `{` `}`. Blocks are required for `if` conditions, `while`, `for` loops, function definition, etc. 
+* Functions can call other functions and you can even define functions within a function. 
+
+Overall, TypeScript is a different languages and there are few similarties between them. However, the Office Scripts API themsleves uses similar terminology and data-model (OM) hierarchy as VBA APIs and that should help you navigate around. 
