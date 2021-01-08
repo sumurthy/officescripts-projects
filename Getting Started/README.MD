@@ -64,7 +64,8 @@ As you can see below, `main` funciton is the entry point to any script. It is im
 
 `main` funciton is the entry point for any script. When the function is executed, Excel application invokes this main function by providing the workbook as its first parameter. Hence, it is important to not modify the basic signature of the main function once you have either recorded the script or created a new script from the code editor.
 
-![Basics of Office Scripts](parts.png)] 
+![Basics of Office Scripts](slook.png)] 
+
 
 ### Use functions to organize and re-use code
 
@@ -72,11 +73,9 @@ You can connect the Excel to other parts of your organization by running scripts
 
 The keys to receiving or sending data from/to Excel is through the main function. Think of it as the information gateway that allows incoming and outgoing data to be described and used in the script. You can receive data from outside in the form of `string` data type and return any TypeScript recognized data such as `string`, `number`, `boolean`, or any objects in the form of interface you define in the script. 
 
-![Basics of Office Scripts](functions.png)] 
-
-
 ### You can send or receive data from other apps 
-![Basics of Office Scripts](slook.png)] 
+
+![Basics of Office Scripts](functions.png)] 
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
