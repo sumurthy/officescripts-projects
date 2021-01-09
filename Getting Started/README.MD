@@ -359,6 +359,20 @@ In both cases, you will see the line # where the error occured. You can then exa
 
 Below are few best practices to avoid runtime errors.
 
+### Check for object existance before deletion 
+
+Alternately, for deleting an object that may or may not exist, use this pattern: 
+
+```ts
+    workbook.getWorksheet('Index')?.delete(); // The ? preceding the delete() will ensure that the API is only invoked if the object exists. 
+
+    // Alternate way -- 
+    const indexSheet = workbook.getWorksheet('Index');
+    if (indexSheet) {
+        indexSheet.delete();
+    }
+```
+
 ### Do pre-checks at the beginning of the script
 
 As a best practice, always ensure that all your inputs are present in the Excel file prior to running your script. You may have made certian assumptions about objects being present in the workbook. If those objects don't exist, your script may encouter an error when you read the object or its data. Rather than beginning the processing and erroring in the middle after part of the updates/processing has already finished, it is better to do all pre-checks at the start of the script. 
