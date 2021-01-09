@@ -76,9 +76,9 @@ You can connect the Excel to other parts of your organization by running scripts
 
 The keys to receiving or sending data from/to Excel is through the main function. Think of it as the information gateway that allows incoming and outgoing data to be described and used in the script. You can receive data from outside in the form of `string` data type and return any TypeScript recognized data such as `string`, `number`, `boolean`, or any objects in the form of interface you define in the script. 
 
-![Basics of Office Scripts](parts.png)] 
+![Basics of Office Scripts](parts.png)
 
-### Foundational concepts  
+### Foundational concepts for better understanding
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
