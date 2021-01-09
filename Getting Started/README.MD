@@ -345,13 +345,15 @@ Office Scripts error can be classified into one of the following categories:
 
 Editor warnings can be identified using the red underlines in the editor: 
 
-![Explicit any error](expany.png)
+![Implicit any error](eanyi.png)
+
 
 At times, you may also see orange warning underlines and grey informational messages. They should be examined closely - though they are not going to cause errors. 
 
 It is not not possible to distinguish between compile time and runtime errors as both error message will look identical. They both occur when you actually execute the script. See below for an example of compile time error followed by runtime error. 
 
-![Implicit any error](iany.png)
+
+![Explicit any error](expany.png)
 
 ![Error](error-basic.png)
 
