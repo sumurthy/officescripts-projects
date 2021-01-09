@@ -41,7 +41,7 @@ _Key things to note_
 
 ## Anatomy of a script and basic pattern
 
-Office Scripts consists of individual script files that are stand-alone and instructs Excel to perform some automation against the workbook it is executed on. All scripts are stored in separate files and stored on user's OneDrive folder. You can record a new script, edit recorded script or write a whole new script from the scratch all within built-in editor interface. The best part of scripts are that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setup are handled by the Office Scripts and it allows easy and fast access to automation thorugh simple API interface. 
+Office Scripts consists of individual script files that are stand-alone and instructs Excel to perform some automation against the workbook it is executed on. All scripts are stored in separate files and stored on user's OneDrive folder. You can record a new script, edit recorded script or write a whole new script from the scratch all within built-in editor interface. The best part of scripts is that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setup are handled by the Office Scripts and it allows easy and fast access to automation thorugh simple API interface. 
 
 When you open any script, you will find few familar `main` function with set of instructions. This section helps provide anatomy of such a script: 
 
@@ -78,9 +78,11 @@ The keys to receiving or sending data from/to Excel is through the main function
 
 ![Basics of Office Scripts](parts.png)] 
 
+### Foundational concepts  
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
+* Basic language syntax, defining types 
 * Understanding of `main` function and parameters.
 * Object hierarchy and relationships.
 * Basic read, write data to/from workbook.
@@ -100,7 +102,104 @@ Examples:
 
 You can identify the types easily in the code editor as it appears distinctly usually in a different color. The color `:` usually preceds the type declaration.  
 
-Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code. For the most part TypeScript language is good at inferring the types of variables. However, in certain cases, Office Script will require the type declarations be explicitly defined if the language is unable to clearly identify the type. Also, explicit or implicit `any` is not allowed in Office Script.  
+Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code. For the most part TypeScript language is good at inferring the types of variables. However, in certain cases, Office Script will require the type declarations be explicitly defined if the language is unable to clearly identify the type. Also, explicit or implicit `any` is not allowed in Office Script. More on that below 
+
+#### 'any' type in the script
+
+As the [TypeScript website states](https://www.typescriptlang.org/docs/handbook/basic-types.html#any), in some situations, not all type information is available or its declaration would take an inappropriate amount of effort. These may occur for values from code that has been written without TypeScript or a 3rd party library. In these cases, we might want to opt-out of type checking. To do so, we label these values with the `any` type:
+
+```typescript
+declare function getValue(key: string): any;
+// OK, return value of 'getValue' is not checked
+const str: string = getValue("myString");
+```
+
+**Explicit `any` is not allowed**
+
+```typescript
+let someVariable: any; 
+// ^^ This is not allowed ^^
+```
+
+The `any` type presents challenges to the way Office Script processes the Excel APIs. It causes issues when the variables are sent to Excel APIs for processing. Knowing the type of variables used in the script is essential to the processing of script and hence explicit definition of any variable with `any` type is prohibited. You will receive a compile time error (error prior to the running of the script) if there is any variable with `any` type defined in the script. You will see an error on the editor as well. 
+
+![Explicit any error](eanyi.png)] 
+
+![Explicit any error](expany.png)] 
+
+In the above code `[5, 16] Explicit Any is not allowed` indicates that line # 5 column # 16 defines `any` type. This helps to locate the error line. 
+
+To get around this issue, always define the type of the variable. 
+
+If you are uncertain about the type of a variable, one cool trick in TypeScript allows you to define [union types](https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html). This can be used for variables to hold range value, which can be only of many types. 
+
+```typescript
+   let value: (string | number | boolean);
+   // ^^ define this as a union type rather than any type ^^
+   value = someValue_from_another_source;
+   //...
+   someRange.setValue(value);
+```
+
+#### Type inference 
+
+In TypeScript, there are several places where [type inference](https://www.typescriptlang.org/docs/handbook/type-inference.html is used to provide type information when there is no explicit type annotation. For example, in this code
+
+```typescript
+let x = 3;
+//  ^ = let x: number
+```
+
+The type of the x variable is inferred to be number. This kind of inference takes place when initializing variables and members, setting parameter default values, and determining function return types. 
+
+
+#### no-implicit-any rule
+A script requires the types of the variables used to be explicitly or implicity defined. If TypeScript compiler is unable to determine the type of a variable (either because type is not defined explicitly or type inference is not not possible), then you will receive a compilation time error (error prior to the running of the script).  You will see an error on the editor as well.
+
+![Explicit any error](iany.png)] 
+
+Following scripts will receive compilation time error as variables are defined without any types and TypeScript cannot determine the type at the time of declaration. 
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+    let value; 
+    // ^^ the variable 'value' gets 'any' type as no type is defined. ^^
+    value = 10; 
+    // ^^Even when a numer type is assigned, the type of 'value' remains any. ^^
+    workbook.getActiveCell().setValue(value);
+    // ^^ Above line will fail because Office Scripts can't send an argument of type 'any' to Excel for processing. ^^
+    return;
+}
+```
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+    let cell; 
+    // ^^ the variable 'cell' gets 'any' type as no type is defined. ^^
+    cell = workbook.getActiveCell().getValue();
+    console.log(cell.getValue());
+    // ^^ Office Scripts cannot assign Range type object to 'any' type variable. ^^    
+    return;
+}
+```
+
+To avoid this, use following instead. In each case, the type is declared at the time of declaration of variable. 
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+    const value: number = 10; 
+    workbook.getActiveCell().setValue(value);
+    return;
+}
+```
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+    const cell: ExcelScript.Range = workbook.getActiveCell().getValue();
+    console.log(cell.getValue()); 
+    return;
+}
+```
 
 ### Script's starting point 
 
