@@ -156,7 +156,7 @@ The type of the x variable is inferred to be number. This kind of inference take
 #### no-implicit-any rule
 A script requires the types of the variables used to be explicitly or implicity defined. If TypeScript compiler is unable to determine the type of a variable (either because type is not defined explicitly or type inference is not not possible), then you will receive a compilation time error (error prior to the running of the script).  You will see an error on the editor as well.
 
-![Explicit any error](iany.png)] 
+![Implicit any error](iany.png)
 
 Following scripts will receive compilation time error as variables are defined without any types and TypeScript cannot determine the type at the time of declaration. 
 
@@ -336,6 +336,28 @@ Read all the data you need outside of the loop rather than reading it inside of 
 Avoid exception handling for loops. Both inside and outside loops. 
 
 ## Error handling 
+
+Office Scripts error can be classified into one of the following categories:
+
+1. Compile time warnings shown in the editor 
+1. Compile time error that appears when you run - it occurs before the execution begins 
+1. Runtime error 
+
+Editor warnings can be identified using the red underlines in the editor: 
+
+![Explicit any error](expany.png)
+
+At times, you may also see orange warning underlines and grey informational messages. They should be examined closely - though they are not going to cause errors. 
+
+It is not not possible to distinguish between compile time and runtime errors as both error message will look identical. They both occur when you actually execute the script. See below for an example of compile time error followed by runtime error. 
+
+![Implicit any error](iany.png)
+
+![Error](error-basic.png)
+
+In both cases, you will see the line # where the error occured. You can then examine the code, fix the issue and run again. 
+
+Below are few best practices to avoid runtime errors.
 
 ### Do pre-checks at the beginning of the script
 
