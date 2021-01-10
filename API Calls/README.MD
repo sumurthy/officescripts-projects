@@ -38,7 +38,7 @@ _Few things to note_:
 
 ## Script used 
 
-* [API Call from Office Script](ApiCall.ts)
+* [API Call from Office Script](APICall.ts)
 
 ## Video
 
