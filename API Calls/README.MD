@@ -1,4 +1,4 @@
-# External data or service access 
+# External API calls from Office Scripts
 
 Office Scripts allows [limited external API call support](https://docs.microsoft.com/en-us/office/dev/scripts/develop/external-calls) as documented on the official website. 
 
