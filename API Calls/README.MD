@@ -25,9 +25,21 @@ _Few things to note_:
 1. Define the input or output `interface` to help with code completion and development time verification. See video for details. 
 1. Code/test/optimize. You can separte your API call routine to a separte function to make it re-usable from other part of script or for code-reuse from a different script (copy paste becomes much easier this way). 
 
+## Scenario 
+
+![Get repos info](git.png)
+
+
 ## Resources used in the demo 
 
 1. [Get repos Github API reference](https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#list-repositories-for-a-user)
 1. API call output: Go to browser or any HTTP interface and type in: https://api.github.com/users/{USERNAME}/repos by replacing {USERNAME} with your Github ID. 
 1. Information fetched: repo.name, repo.size, repo.owner.id, repo.license?.name
 
+## Script used 
+
+* [API Call from Office Script](ApiCall.ts)
+
+## Video
+
+[![]()]()
