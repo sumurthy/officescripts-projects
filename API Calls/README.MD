@@ -42,4 +42,4 @@ _Few things to note_:
 
 ## Video
 
-[![]()]()
+[![API Call video](v_api.png)](https://youtu.be/fulP29J418E)
