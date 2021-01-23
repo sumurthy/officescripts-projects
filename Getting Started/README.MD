@@ -64,7 +64,7 @@ Some of the basic pattern helpful to understand to edit and navigate around scri
 
 This section explains some of the above concepts in detail. 
 
-#### Language - TypeScript 
+### Language - TypeScript 
 
 [Office Scripts](https://docs.microsoft.com/office/dev/scripts/) is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
 
@@ -111,7 +111,7 @@ The keys to receiving or sending data from/to Excel is through the main function
 
 All of the Excel's object model is defined in a hierarchical structure of objects, beginning with workbook object of type `ExcelScript.Workbook`. An object can contain methods, and other objects (rarely) within it. Objects are linked to each other using the methods - an object's method can return another object or collection of objects. Using code editor's IntelliSence (code completion) feature is a great way to explore the object hierarchy. You can also use the [official reference documentation site](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel) to follow along the relationships among objects. 
 
-### Get object reference 
+#### Get object reference 
 
 You can get object reference by fetching the object using `get` method or by retrieving the collection of objects as shown below: 
 
@@ -130,7 +130,7 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-### Check if an object exists, delete and Add
+#### Check if an object exists, delete and Add
 
 For creating an object, say with a pre-defined name, it is always better to remove similar object that may exist and then add it. You can accompliush that using this pattern:
 
@@ -157,7 +157,7 @@ Alternately, for deleting an object that may or may not exist, use this pattern:
 ```ts
     workbook.getWorksheet('Index')?.delete(); // The ? preceding the delete() will ensure that the API is only invoked if the object exists. 
 ```
-### Collections 
+#### Collections 
 
 Collections are objects such as tables, charts, columns, etc. that can be retrived as an array and iterated over for processing. You can retrieve a collection using corresponding `get` method and process the data in a loop using one of many TypeScript array traversal techniques such as:
 
