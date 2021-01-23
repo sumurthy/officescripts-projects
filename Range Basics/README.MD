@@ -10,9 +10,11 @@ The following are core set of getter, setter and other useful methods most often
 ## Videos link 
 
 _Range basics-
+
 [![Watch step by step video](v_rangebasics.png)](https://youtu.be/4emjkOFdLBA "Watch step by step video")
 
 _Add row at the end of worksheet_
+
 [![Watch step by step video](v_addrow.png)](https://youtu.be/RgtUar013D0 "Watch step by step video")
 
 ## Scripts 
