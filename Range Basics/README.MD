@@ -7,13 +7,18 @@ Range can also be obtained via. users selection, which consists of at least one 
 
 The following are core set of getter, setter and other useful methods most often used in scripts. This is a great starting point to begin the API jorney. The following sections divides the methods into easy to understand grouping and helps to build an easy mental model as you begin to unlock the range object's APIs. 
 
-## Video link 
+## Videos link 
 
+_Range basics-
 [![Watch step by step video](v_rangebasics.png)](https://youtu.be/4emjkOFdLBA "Watch step by step video")
+
+_Add row at the end of worksheet_
+[![Watch step by step video](v_addrow.png)](https://youtu.be/RgtUar013D0 "Watch step by step video")
 
 ## Scripts 
 
 * [Basic read and write](ReadWriteBasics.ts)
+* [Add row at the end of worksheet](AddRowAtEnd.ts)
 * [Clear column filter](../Clear%20Table%20Filter%20For%20Active%20Cell/ClearFilterFromCell.ts)
 * [Color each cell with unique color](ColorCells.ts): shows how to iterate over cells and perform operations 
 * [Update range with values using 2D array](Update2DRangeValues.ts): dynamically calculates the range dimension to update based on 2D array values. 
