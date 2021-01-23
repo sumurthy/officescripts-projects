@@ -58,7 +58,7 @@ Some of the basic pattern helpful to understand to edit and navigate around scri
 
 * Basic language syntax, defining types 
 * Understanding of `main` function and parameters.
-* Object hierarchy and relationships, methods, properties.
+* Objects, hierarchy, methods, properties, collections.
 * Collection (array) navigation and operations. 
 * Type definitions
 
@@ -107,7 +107,7 @@ The keys to receiving or sending data from/to Excel is through the main function
 ![Basics of Office Scripts](parts.png)
 
 
-### Objects  
+### Objects, hierarchy, methods, properties, collections.  
 
 All of the Excel's object model is defined in a hierarchical structure of objects, beginning with workbook object of type `ExcelScript.Workbook`. An object can contain methods, and other objects (rarely) within it. Objects are linked to each other using the methods - an object's method can return another object or collection of objects. Using code editor's IntelliSence (code completion) feature is a great way to explore the object hierarchy. You can also use the [official reference documentation site](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel) to follow along the relationships among objects. 
 
