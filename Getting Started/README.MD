@@ -2,6 +2,17 @@
 
 This section provides details about the basics of Office Scripts including access, environment, script fundamentals and few basic script patterns. 
 
+
+## Content
+
+[Access, environment and editor](#environment)
+[Anatomy of a script and basic pattern](#anatomy-of-a-script-and-basic-pattern)
+[Range basics](#range-basics)
+[Basic performance considerations](#basic-performance-considerations)
+[Error handling](#error-handling)
+[Note to VBA developers](#note-to-vba-developers)
+
+
 ## Environment 
 
 Learn about the basics access, environment, and script editor. 
