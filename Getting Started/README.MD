@@ -109,11 +109,90 @@ The keys to receiving or sending data from/to Excel is through the main function
 
 ### Objects, hierarchy, methods, properties, collections.  
 
-All of the Excel's object model is defined in a hierarchical structure of objects, beginning with workbook object of type `ExcelScript.Workbook`. An object can contain methods, and other objects (rarely) within it. Objects are linked to each other using the methods - an object's method can return another object or collection of objects. Using code editor's IntelliSence (code completion) feature is a great way to explore the object hierarchy. You can also use the [official reference documentation site](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel) to follow along the relationships among objects. 
+All of the Excel's object model is defined in a hierarchical structure of objects, beginning with workbook object of type `ExcelScript.Workbook`. An object can contain methods, properties, and other objects within it. Objects are linked to each other using the methods - an object's method can return another object or collection of objects. Using code editor's IntelliSence (code completion) feature is a great way to explore the object hierarchy. You can also use the [official reference documentation site](https://docs.microsoft.com/en-us/office/dev/scripts/overview/excel) to follow along the relationships among objects. 
+
+
+An [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) is a collection of properties, and a property is an association between a name (or key) and a value. A property's value can be a function, in which case the property is known as a method. In the case of Office Scripts objetc model, an object represents a thing in the Excel file that users interact with such chart, hyperlink, pivot-table, etc. It can also represent behavior of an object such as protection attributes of a worksheet. 
+
+The topic of TypeScript objects and properties vs methods is quite deep. In order to get started with the script and be productive, you can remember few basic things: 
+
+* Both objects are properties are accessed using `.` dot notation, with the object on the left side of the `.` and property or method on the right side. Example: `hyperlink.address`, `range.getAddress()`
+* Properties are scalar in nature (strings, booleans, numbers). E.g., name of a workbook, position of a worksheet, value of whether table has footer or not. 
+* Methods are 'invoked' or 'executed' using the open close parenthesis. e.g.,: `table.delete()`. Sometimes an argument is passed to a function by including them between open close parenthesis: `range.setValue('Hello')`. You can pass many arguments to a function (as defined by its contract/signature). simply separate them using `,`.  e.g.,: `worksheet.addTable('A1:D6', true)`. You can pass arguments of any type as required by the method such as strings, number, boolean or even other objects. e.g., `worksheet.addTable(targetRange, true)`, where targetRange is an object created elsewhere in the script. 
+* Methods can return a thing such as a scalar property (name, address, etc.) or another object (range, chart), or not return anything at all (such as the case with `delete` methods). You receive what method returns by declaring a variable or assigning to existing variable. You can see that on the left hand side of statement such as `const table = worksheet.addTable('A1:D6', true)`.
+* For the most part, Office Script object model consists objects with methods that links various parts of the Excel object model. Very rarely you'll come across properties that are of scalar or object values. 
+* In Office Scripts, an Excel object model method has to contain open-close parenthesis. Usage of methods without them is not allowed (such as assining method to a variable).
+
+
+Lets look at some of the methods of `workbook` object. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    // Returns a boolean (true or false) setting of whether the workbook is set to auto-save or not. 
+    const autoSave = workbook.getAutoSave(); 
+    // Get workbook name 
+    const name = workbook.getName();
+    // Get active cell range object 
+    const cell = workbook.getActiveCell();
+    // Get table named SALES
+    const cell = workbook.getTable('SALES');
+    // Get all slicer objects 
+    const slicers = workbook.getSlicers();
+}
+```
+
+In the above example, 
+
+* The methods of `workbook` object such as `getAutoSave()` and `getName()` returns a scalar property (string, number, boolean). 
+* Where as methods such as `getActiveCell()` returns another object.
+* The `getTable()` method accepts an argument (table name in this case) and returns a specific table in the workbook. 
+* The `getSlicers()` method returns an array (referred to in many places as collection) of all slicer objects within the workbook. 
+
+You'll notice that all of the above methods have a prefix of `get`, which is just a convention used in the Office Scripts object model to convey that the method is returning something. They are also commonly referred to as 'getters'. 
+
+There are two other types of methods that we'll now see in the exmaple below: 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    // Get a worksheet named 'Sheet1 
+    const sheet = workbook.getWorksheet('Sheet1); 
+    // Set name to SALES
+    sheet.setName('SALES');
+    // Postion the worksheet at the beginning
+    sheet.setPosition(0);
+}
+```
+
+In the above example,
+
+* `setName()` method sets the name to a a new name. `setPosition()` sets the position to 1st place. 
+* Such methods modify the Excel file by setting some proeprty or behavior of the workbook. These methods are called 'setters'. 
+* Typically 'setters' have a companion 'getters'. e.g., `worksheet.getPosition` and `worksheet.setPosition` - both of which are methods.
+
+
+#### Method chaining
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    workbook.getActiveCell().getOffsetRane(0,1).setValue('Next cell');
+}
+```
+
 
 #### Get object reference 
 
-You can get object reference by fetching the object using `get` method or by retrieving the collection of objects as shown below: 
+the `workbook` object is given to you directly in the `main` function. You can begin to use the `workbook` object and access its methods directly. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    // Get workbook name
+    const name = workbook.getName();
+    // Display name to console
+    console.log(name);
+}
+```
+
+For using all other objects within the workbook, begin with `workbook` object and go down the hierarchy until you get to the object you are looking for. You can get object reference by fetching the object using `get` method or by retrieving the collection of objects as shown below: 
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
@@ -168,7 +247,7 @@ Collections are objects such as tables, charts, columns, etc. that can be retriv
 * [Language basics of arrays](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays)
 
 
-This script demonstrates how to use collections used in Office Scripts Excel APIs. 
+This script demonstrates how to use collections used in Office Scripts Excel APIs. It colors each worksheet tab in the file with a random color. 
 
 ```ts 
 
@@ -302,10 +381,6 @@ function main(workbook: ExcelScript.Workbook) {
     return;
 }
 ```
-
-
-
-
 
 ## Range basics 
 
