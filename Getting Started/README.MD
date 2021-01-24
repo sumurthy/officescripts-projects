@@ -52,7 +52,7 @@ _Key things to note_
 
 ## Anatomy of a script and basic pattern
 
-Office Scripts consists of individual script files that are stand-alone and instructs Excel to perform some automation against the workbook it is executed on. All scripts are stored in separate files and stored on the user's OneDrive folder. You can record a new script, edit the recorded script or write a whole new script from the scratch all within a built-in editor interface. The best part of scripts is that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setups are handled by Office Scripts and it allows easy and fast access to automation through a simple API interface. 
+Office Scripts consists of stand-alone scripts which contains instructions to perform some automation against the Excel workbook. All automation instructions are self-contained within a script and scripts doesn't invoke or call other scripts. All scripts are stored in stand-alone files and stored on the user's OneDrive folder. You can record a new script, edit the recorded script or write a whole new script from the scratch all within a built-in editor interface. The best part of scripts is that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setups are handled by Office Scripts and it allows easy and fast access to automation through a simple API interface. 
 
 Some of the basic concepts helpful to understand to edit and navigate around scripts include: 
 
