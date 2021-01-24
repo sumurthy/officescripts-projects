@@ -1,6 +1,6 @@
 # Getting started 
 
-This section provides details about the basics of Office Scripts including access, environment, script fundamentals and few basic script patterns. 
+This section provides details about the basics of Office Scripts including access, environment, script fundamentals, and few basic script patterns. 
 
 
 ## Content
@@ -30,7 +30,7 @@ You can tell if one has access to Office Scripts by opening an Excel file on the
 If you still can't see the Automate tab, check [this troubleshooting section](https://docs.microsoft.com/office/dev/scripts/testing/troubleshooting#automate-tab-not-appearing-or-office-scripts-unavailable).
 
 ### Availability 
-Office Scripts is available only in the Excel for web for Enterprise E3+ licenses (Consumer, E1 accounts are not supported).  Excel desktop/MacOS versions are not yet supported. 
+Office Scripts is available only in the Excel for the web for Enterprise E3+ licenses (Consumer, E1 accounts are not supported).  Excel desktop/MacOS versions are not yet supported. 
 
 ### Scripts and editor
 
@@ -57,9 +57,9 @@ Office Scripts consists of individual script files that are stand-alone and inst
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
 * Basic language syntax, defining types 
-* Understanding of `main` function and parameters.
-* Objects, hierarchy, methods, properties, collections.
-* Collection (array) navigation and operations. 
+* Understanding of `main` function and parameters
+* Objects, hierarchy, methods, properties, collections
+* Collection (array) navigation and operations
 * Type definitions
 
 This section explains some of the above concepts in detail. 
