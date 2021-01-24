@@ -431,45 +431,6 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-## Range basics 
-
-Check out the [Range Basics](../Range%20Basics) before you go further on your journey. 
-
-## Basic performance considerations
-
-### Avoid slow operations in the loop
-
-Certain operations when done inside/around the loop statements such as `for`, `for..of`, `map`, `forEach`, etc. can lead to slow performance. Avoid the following patterns:
-
-* `get*` APIs 
-
-Read all the data you need outside of the loop rather than reading it inside of the loop. At times, it is hard to avoid reading inside of loops - in such a case, make sure your loop counts are not too large or manage them in batches to avoid having to loop through a large data structure. 
-
-**Note**: If the range/data you are dealing with is quite large (say >100K cells), you may need to use advanced techniques like breaking-up your read/writes into multiple chunks. The following video is really for a small-mid size data setup. For large dataset, refer to [advanced data write scenario](../Performance#large-data-write-scenario)
-
-[![Read and write optimization tip](v_perf.jpg)](https://youtu.be/lsR_GvVW3Pg "Read and write optimization tip")
-
-* `console.log` in the loop slows down the script 
-
-```ts
-    // Color each cell with random color
-    for (let row = 0; row < rows; row++) {
-        for (let col = 0; col < cols; col++) {
-            range
-                .getCell(row, col)
-                .getFormat()
-                .getFill()
-                .setColor(`#${Math.random().toString(16).substr(-6)}`);
-            /* Avoid such console.log in side loop */    
-            // console.log("Updating" + range.getCell(row, col).getAddress()); 
-        }
-    }
-```
-
-* `try {} catch ()` statement 
-
-Avoid exception handling for loops. Both inside and outside loops. 
-
 ## Error handling 
 
 Office Scripts error can be classified into one of the following categories:
@@ -672,6 +633,47 @@ function updateTargetRange(
 ```
 
 *Warning* - Using `try..catch` inside of a loop will slow down your script. Avoid using this inside of or around loops. 
+
+## Range basics 
+
+Check out the [Range Basics](../Range%20Basics) before you go further on your journey. 
+
+## Basic performance considerations
+
+### Avoid slow operations in the loop
+
+Certain operations when done inside/around the loop statements such as `for`, `for..of`, `map`, `forEach`, etc. can lead to slow performance. Avoid the following patterns:
+
+* `get*` APIs 
+
+Read all the data you need outside of the loop rather than reading it inside of the loop. At times, it is hard to avoid reading inside of loops - in such a case, make sure your loop counts are not too large or manage them in batches to avoid having to loop through a large data structure. 
+
+**Note**: If the range/data you are dealing with is quite large (say >100K cells), you may need to use advanced techniques like breaking-up your read/writes into multiple chunks. The following video is really for a small-mid size data setup. For large dataset, refer to [advanced data write scenario](../Performance#large-data-write-scenario)
+
+[![Read and write optimization tip](v_perf.jpg)](https://youtu.be/lsR_GvVW3Pg "Read and write optimization tip")
+
+* `console.log` in the loop slows down the script 
+
+```ts
+    // Color each cell with random color
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            range
+                .getCell(row, col)
+                .getFormat()
+                .getFill()
+                .setColor(`#${Math.random().toString(16).substr(-6)}`);
+            /* Avoid such console.log in side loop */    
+            // console.log("Updating" + range.getCell(row, col).getAddress()); 
+        }
+    }
+```
+
+* `try {} catch ()` statement 
+
+Avoid exception handling for loops. Both inside and outside loops. 
+
+
 
 ## Note to VBA developers
 
