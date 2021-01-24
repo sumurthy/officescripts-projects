@@ -56,7 +56,7 @@ Office Scripts consists of individual script files that are stand-alone and inst
 
 Some of the basic pattern helpful to understand to edit and navigate around scripts include: 
 
-* Basic language syntax, defining types 
+* Basic language syntax 
 * Understanding of `main` function and parameters.
 * Objects, hierarchy, methods, properties, collections.
 * Collection (array) navigation and operations. 
