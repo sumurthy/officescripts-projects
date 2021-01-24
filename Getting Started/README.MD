@@ -170,7 +170,21 @@ In the above example,
 * Typically 'setters' have a companion 'getters'. e.g., `worksheet.getPosition` and `worksheet.setPosition` - both of which are methods.
 
 
+#### `undefined` and `null` primitive types 
+
+There are two primitive data types that one must be aware of:
+
+* The value [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null) represents the intentional absence of any object value. It is one of JavaScript's primitive values. It is used to indicate that a variable has no value.
+* A variable that has not been assigned a value is of type [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined). A method or statement can also return `undefined` if the variable that is being evaluated does not have an assigned value. 
+
+The above two types crop up as part of error handling and can cause quite a bit of headache if not handled properly. Fortunately, TypeScript/JavaScript language offers easy way to check if a variable is of type `undefined` or `null` easily. We will talk about some of those checks in below sections, including in error handling. 
+
+
 #### Method chaining
+
+You can use dot notation to connect objects being returned from a method to shorten your code. Sometimes this technique makes the code easy to read and manage. However, there are few things to be aware of. Let's look at the following examples:
+
+Below code gets the active cell and gets the next cell and sets value. This is a good candidate to use chaining as this code will succeed all the time. 
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
@@ -178,6 +192,41 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
+However, below code which, gets a table named SALES and turns its banded column style on, has an issue. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    workbook.getTable('SALES').setShowBandedColumns(true);
+}
+```
+
+What if the SALES table doesn't exist? The script will fail with an error as shown below because the `getTable('SALES')` returns `undefined` type (which is a JavaScript type indicating that there is no table such as `SALES`). Calling `setShowBandedColumns` method on `undefined` makes no sense - `undefined.setShowBandedColumns(true)` and hence the script ends in an error.
+
+```
+Line 2: Cannot read property 'setShowBandedColumns' of undefined
+```
+
+You could use [optional chaining operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) that provides a way to simplify accessing values through connected objects when it's possible that a reference or method may be `undefined` or `null` (which is JavaScript way of indicating unassigned or non-existent object or result) to handle this condition. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    // This line will not fail as the setShowBandedColumns method is executed only if the SALES table is present
+    workbook.getTable('SALES')?.setShowBandedColumns(true); 
+}
+```
+
+If you wish to handle non-existing object condition or `undefined` type being returned by a method, then it is better to assign the return value from method and handle that separately. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+    const salesTable = workbook.getTable('SALES');
+    if (salesTable) {
+        salesTable.setShowBandedColumns(true);
+    } else { 
+        // Handle this condition
+    }
+}
+```
 
 #### Get object reference 
 
