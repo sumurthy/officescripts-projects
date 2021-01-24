@@ -68,9 +68,9 @@ This section explains some of the above concepts in detail.
 
 [Office Scripts](https://docs.microsoft.com/office/dev/scripts/) is written using [TypeScript language](https://www.typescriptlang.org/), which is an open-source language that builds on JavaScript, one of the world’s most used tools, by adding static type definitions. As the website says, `Types` provide a way to describe the shape of an object, providing better documentation, and allowing TypeScript to validate that your code is working correctly. 
 
-The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand the basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it use automation. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along and make small edits.  
+The language syntax itself is written using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) with additional typings defined in the script using TypeScript conventions. For the most part, you can think of Office Script as written in JavaScript. It is essential that you understand the basics of JavaScript language to begin your Office Scripts journey; though you don't need to be proficient at it to begin your automation journey. Office Scripts' action recorder makes it easy to understand the script statements by adding code comments and allowing you to follow along and make small edits.  
 
-Office Scripts APIs can be invoked synchronously - no promises or callbacks. ​It's designed for end-users who may not have any programming background. API design provides: 
+Office Scripts APIs, which allows the script to interact with Excel is designed for end-users who may not have much coding background. APIs can be invoked synchronously and you don't need to know advanced topics such as promises or callbacks. Office Scripts API design provides: 
 
 * Simple object model with methods, getter/setters
 * Easy to access object collections as regular arrays
