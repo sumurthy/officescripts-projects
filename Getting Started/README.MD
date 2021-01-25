@@ -92,7 +92,7 @@ So, in summary:
 * It is important to keep the first argument `workbook` and it's type declaration as it appears. You can add new arguments to `main` function (See below section) - but do keep the first argument as is. 
 
 
-![Basics of Office Scripts](slook.png)] 
+![Basics of Office Scripts](main-introduction.png)] 
 
 
 #### You can send or receive data from other apps 
@@ -101,12 +101,12 @@ You can connect the Excel to other parts of your organization by running scripts
 
 The way to receiving or sending data from/to Excel is through the `main` function. Think of it as the information gateway that allows incoming and outgoing data to be described and used in the script. You can receive data from outside in the form of `string` data type and return any TypeScript recognized data such as `string`, `number`, `boolean`, or any objects in the form of interface you define in the script. 
 
-![Basics of Office Scripts](parts.png)
+![Basics of Office Scripts](data-in-out.png)
 
 
 #### Use functions to organize and re-use code
 
-![Basics of Office Scripts](functions.png)] 
+![Basics of Office Scripts](use-functions.png)] 
 
 ### Objects, hierarchy, methods, properties, collections.  
 
