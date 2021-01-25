@@ -261,7 +261,7 @@ function main(workbook: ExcelScript.Workbook) {
 
 #### Check if an object exists, delete and Add
 
-For creating an object, say with a pre-defined name, it is always better to remove similar object that may exist and then add it. You can accompliush that using this pattern:
+For creating an object, say with a pre-defined name, it is always better to remove similar object that may exist and then add it. You can do that using this pattern:
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
