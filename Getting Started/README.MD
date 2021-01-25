@@ -57,10 +57,11 @@ Office Scripts consists of stand-alone scripts written in TypeScript language, w
 Some of the basic concepts helpful to understand to edit and navigate around scripts include: 
 
 * Basic TypeScript language syntax 
-* Understanding of `main` function and parameters
-* Objects, hierarchy, methods, properties, collections
-* Collection (array) navigation and operations
+* Understanding of `main` function and arguments
+* Objects and hierarchy, methods, properties
+* Collection (array): navigation and operations
 * Type definitions
+* Environment: record/edit, run, examine results, share.
 
 This section explains some of the above concepts in detail. 
 
@@ -74,7 +75,7 @@ Office Scripts APIs, which allows the script to interact with Excel is designed 
 
 * Simple object model with methods, getter/setters
 * Easy to access object collections as regular arrays
-* Simple error handling options, and more
+* Simple error handling options
 * Optimized performance for select scenarios helping users to focus on the scenario at hand
 
 ### `main` function - script's starting point 
