@@ -156,7 +156,7 @@ There are two other types of methods that we'll now see in the example below:
 ```ts
 function main(workbook: ExcelScript.Workbook) {
     // Get a worksheet named 'Sheet1 
-    const sheet = workbook.getWorksheet('Sheet1); 
+    const sheet = workbook.getWorksheet('Sheet1'); 
     // Set name to SALES
     sheet.setName('SALES');
     // position the worksheet at the beginning
