@@ -6,7 +6,7 @@ This section provides details about the basics of Office Scripts including acces
 ## Content
 
 * [Access, environment and editor](#environment)
-* [Gentle introuduction to script](#gentle-introduction-to-script)
+* [Gentle introduction to script](#gentle-introduction-to-script)
 * [Error handling](#error-handling)
 * [Range basics](#range-basics)
 * [Basic performance considerations](#basic-performance-considerations)
@@ -50,7 +50,7 @@ _Key things to note_
 * Scripts cannot be linked from a local disk or custom cloud locations. Office Scripts only recognizes/runs a script that is on pre-defined location (your OneDrive folder mentioned above) or shared scripts. 
 * While editing, files are temporarily saved in the browser - but you'll have to 'save' the script before closing the Excel window to save it to the OneDrive location. Don't forget to save the file after edits. 
 
-## Gentle introuduction to script
+## Gentle introduction to script
 
 Office Scripts consists of stand-alone scripts written in TypeScript language, which contains instructions to perform some automation against the Excel workbook. All automation instructions are self-contained within a script and scripts doesn't invoke or call other scripts. All scripts are stored in stand-alone files and stored on the user's OneDrive folder. You can record a new script, edit the recorded script or write a whole new script from the scratch all within a built-in editor interface. The best part of scripts is that they don't need any further setup from users. No external libraries, web pages or UI elements, setup, etc. All of the environment setups are handled by Office Scripts and it allows easy and fast access to automation through a simple API interface. 
 
