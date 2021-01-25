@@ -159,7 +159,7 @@ function main(workbook: ExcelScript.Workbook) {
     const sheet = workbook.getWorksheet('Sheet1); 
     // Set name to SALES
     sheet.setName('SALES');
-    // Postion the worksheet at the beginning
+    // position the worksheet at the beginning
     sheet.setPosition(0);
 }
 ```
