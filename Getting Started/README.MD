@@ -151,7 +151,7 @@ In the above example,
 
 You'll notice that all of the above methods have a prefix of `get`, which is just a convention used in the Office Scripts object model to convey that the method is returning something. They are also commonly referred to as 'getters'. 
 
-There are two other types of methods that we'll now see in the exmaple below: 
+There are two other types of methods that we'll now see in the example below: 
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
