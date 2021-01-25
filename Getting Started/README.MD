@@ -92,7 +92,7 @@ So, in summary:
 * It is important to keep the first argument `workbook` and it's type declaration as it appears. You can add new arguments to `main` function (See below section) - but do keep the first argument as is. 
 
 
-![Basics of Office Scripts](main-introduction.png)] 
+![Basics of Office Scripts](main-introduction.png)
 
 
 #### You can send or receive data from other apps 
@@ -106,7 +106,7 @@ The way to receiving or sending data from/to Excel is through the `main` functio
 
 #### Use functions to organize and re-use code
 
-![Basics of Office Scripts](use-functions.png)] 
+![Basics of Office Scripts](use-functions.png)
 
 ### Objects, hierarchy, methods, properties, collections.  
 
