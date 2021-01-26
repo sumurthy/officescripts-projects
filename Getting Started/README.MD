@@ -335,6 +335,25 @@ You can identify the types easily in the code editor as it appears distinctly us
 
 Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code. For the most part TypeScript language is good at inferring the types of variables. However, in certain cases, Office Script will require the type declarations be explicitly defined if the language is unable to clearly identify the type. Also, explicit or implicit `any` is not allowed in Office Script. More on that below 
 
+#### Type assertion (overriding the type)
+
+As the TypeScript [documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions) states,  "sometimes you’ll end up in a situation where you’ll know more about a value than TypeScript does. Usually, this will happen when you know the type of some entity could be more specific than its current type.Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion is like a type cast in other languages, but it performs no special checking or restructuring of data. It has no runtime impact and is used purely by the compiler." 
+
+You can assert the type using `as` keyword or using angle-brackets as shown in below code. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+  let data = workbook.getActiveCell().getValue();
+  // Since the add10 function accepts only number, I have to assert data's type as number - otherwise the script cannot be run.
+  const answer1 = add10(data as number);
+  const answer2 = add10(<number> data);
+}
+
+function add10(data: number) { 
+  return data + 10;
+}
+```
+
 #### 'any' type in the script
 
 As the [TypeScript website states](https://www.typescriptlang.org/docs/handbook/basic-types.html#any), in some situations, not all type information is available or its declaration would take an inappropriate amount of effort. These may occur for values from code that has been written without TypeScript or a 3rd party library. In these cases, we might want to opt-out of type checking. To do so, we label these values with the `any` type:
