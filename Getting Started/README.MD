@@ -278,7 +278,28 @@ function main(workbook: ExcelScript.Workbook) {
   } 
     // Add a blank worksheet. 
   console.log(`Adding the worhseet named  ${name}.`)
-    workbook.addWorksheet("Index");
+  const indexSheet = workbook.addWorksheet("Index");
+}
+
+```
+
+Alternately, for deleting an object that may or may not exist, use this pattern: 
+
+```ts
+    // The ? preceding the delete() will ensure that the API is only invoked if the object exists. 
+    workbook.getWorksheet('Index')?.delete(); 
+```
+
+#### Note about adding an object 
+
+To create or insert or add an object such as slicer, pivot-table, worksheet, etc. simply use the corresponding **add_Object_** method. Such method will be available on its parent object. Example - `addChart()` method will be available on `worksheet` object. The **add_Object_** returns the object it creates. Simply receive the returned value and use it later in your script. 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+  // Add object and get a reference to it. 
+  const indexSheet = workbook.addWorksheet("Index");
+  // Use it elsewhere in the script 
+  console.log(indexSheet.getPosition());
 }
 
 ```
@@ -288,6 +309,7 @@ Alternately, for deleting an object that may or may not exist, use this pattern:
 ```ts
     workbook.getWorksheet('Index')?.delete(); // The ? preceding the delete() will ensure that the API is only invoked if the object exists. 
 ```
+
 #### Collections 
 
 Collections are objects such as tables, charts, columns, etc. that can be retrieved as an array and iterated over for processing. You can retrieve a collection using the corresponding `get` method and process the data in a loop using one of many TypeScript array traversal techniques such as:
