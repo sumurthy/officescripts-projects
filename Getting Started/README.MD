@@ -63,7 +63,9 @@ Some of the basic concepts helpful to understand to edit and navigate around scr
 * Type definitions
 * Environment: record/edit, run, examine results, share.
 
-This section explains some of the above concepts in detail. 
+This video and section explains some of the above concepts in detail. 
+
+[![Basics of Scripts](v_script.png)](https://youtu.be/8Zsrc1uaiiU "Basics of Scripts")
 
 ### Language - TypeScript 
 
