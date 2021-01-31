@@ -29,7 +29,7 @@ Example scenario:
 
 The solution has 2 parts: 
 
-1. Office Script to calculate and extract Excel chart and tables. 
+1. [Office Script to calculate and extract Excel chart and tables.](ReportImages.ts)
 1. A power Automate flow to invoke script and email the results. 
 
 ## Input Excel file
