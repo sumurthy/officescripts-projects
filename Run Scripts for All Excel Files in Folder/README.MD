@@ -8,7 +8,14 @@ It performs calculation on the manual Excel calc files, adds formatting and inse
 
 * [Add formatting and insert comment](HighlightAndAlert.ts)
 
+## Input Excel files 
+
+Download Excel files and upload to a folder titled `Sales`. 
+
+* [Input Excel files zip containing 3 separate files](HighlightAndAlertExcelFiles.zip)
+
 ## Video 
 
+* [Watch step-by-step instruction](https://youtu.be/xMg711o7k6w)
 
 
