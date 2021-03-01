@@ -6,7 +6,7 @@ It performs calculation on the manual Excel calc files, adds formatting and inse
 
 ## Source code 
 
-* [Add formatting and insert comment](HightlightAndAlertTask.ts)
+* [Add formatting and insert comment](HighlightAndAlert.ts)
 
 ## Video 
 
