@@ -1,6 +1,6 @@
 # Top tips to accelarate your learning 
 
-## Tip 1 - Use code completion and IntelliSence  
+## Tip 1 - Use code-completion/IntelliSense in the editor 
 
 Per [VS Code document](https://code.visualstudio.com/docs/editor/intellisense), IntelliSense is a general term for various code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as "code completion", "content assist", and "code hinting."
 
@@ -10,14 +10,15 @@ You can trigger IntelliSense by pressing `ctrl space` keys or by typing dot char
 
 Use this code completion feature to explore the object model, discover API you need and learn how to use it. 
 
-## Tip 2 - Range value type
+## Tip 2 - Know how to use Range values
 
 Range is the foundational object within Office Script's Excel object model. [Range APIs](https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.range?view=office-scripts) allows access to both data and format that available on the grid and links other key objects within Excel such as worksheets, tables, charts, etc. 
 
 Among other things each cell consists of `value` field. It contains the underlying value of the cell, which may be different from the `text` you see in the cell. Date or time are good example of value being different from the `text` you see in the cell. A cell can contain one of the following types: `string`, `number`, `boolean`. Even error codes are stored as strings. 
 
-When you are using the cell value it is important to tell TypeScript what value you are expecting to get from a cell. For example, I would like to use this function that subtracts two dates and gives me the number of days separating them. The function that helps me do 
+When you are using the cell value it is important to tell TypeScript what value you are expecting to get from a cell. For example, I would like to use this function that subtracts two dates present in cells and get the number of days separating them. The function that helps me do this expects a number type as its argument. However, when I call this function, I have to tell TypeScript that value being read from the cell using `getValue()` is a number. Otherwise, the TypeScript compiler points out the potential mis-match using a warning message (red underline). Note that such errors will not affect the actual running of the script as at runtime you are really passing the numerical argument. However, TypeScript compiler doesn't know the values at runtime and hence it shows the warning in the editor. 
 
+If indeed the cell had a non-numeric value, the helper function 
 
 ## Tip 3 - Understand arguments - object type
 
