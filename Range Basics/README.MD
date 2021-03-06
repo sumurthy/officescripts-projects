@@ -29,7 +29,7 @@ _Add row at the end of worksheet_
 ## Office Script link 
 A collection of snippets showin in the video (doesn't do anything meaningful..)
 
-* [RangeBasics](RangeBasics.ts)
+* [RangeBasics](ReadWriteBasics.ts)
 
 
 ## Methods that return some range metadata 
