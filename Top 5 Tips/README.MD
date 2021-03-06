@@ -21,7 +21,12 @@ When you are using the cell value it is important to tell TypeScript what value 
 
 ## Tip 4 - Understand arguments - object type
 
-## Tip 4 - Optional chaining 
+## Tip 4 - `null` or `undefined` check and optional chaining 
+
+The `null` or `undefined` types crop up as part of API return values and can cause quite a bit of headache if not handled properly. Fortunately, TypeScript/JavaScript language offers an easy way to check if a variable is of type undefined or null easily. We will talk about some of those checks in the below sections, including error handling.
+
+Per [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), the optional chaining operator (`?.`) permits reading the value of a property located deep within a chain of connected objects without having to expressly validate that each reference in the chain is valid. The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
+
 
 ## Tip 5 - Arrays 
 
