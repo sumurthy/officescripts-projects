@@ -10,7 +10,7 @@ You can trigger IntelliSense by pressing `ctrl space` keys or by typing dot char
 
 Use this code completion feature to explore the object model, discover API you need and learn how to use it. 
 
-## Tip 3 - Range value type
+## Tip 2 - Range value type
 
 Range is the foundational object within Office Script's Excel object model. [Range APIs](https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.range?view=office-scripts) allows access to both data and format that available on the grid and links other key objects within Excel such as worksheets, tables, charts, etc. 
 
@@ -19,11 +19,30 @@ Among other things each cell consists of `value` field. It contains the underlyi
 When you are using the cell value it is important to tell TypeScript what value you are expecting to get from a cell. For example, I would like to use this function that subtracts two dates and gives me the number of days separating them. The function that helps me do 
 
 
-## Tip 4 - Understand arguments - object type
+## Tip 3 - Understand arguments - object type
+
+
 
 ## Tip 4 - `null` or `undefined` check and optional chaining 
 
-The `null` or `undefined` types crop up as part of API return values and can cause quite a bit of headache if not handled properly. Fortunately, TypeScript/JavaScript language offers an easy way to check if a variable is of type undefined or null easily. We will talk about some of those checks in the below sections, including error handling.
+The `null` or `undefined` types crop up as part of API return values and can cause quite a bit of headache if not handled properly. Fortunately, TypeScript/JavaScript language offers an easy way to check if a variable is of type undefined or null easily. 
+
+For example, the `findAll` API can either return the range areas where the string "locks" is found or it can return `undefined` (if there is no such string in the worksheet). 
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+  const results = workbook.getActiveWorksheet().findAll("Locks", {matchCase: true});
+  const cellAddressArray = results.getAddress().split(',');
+  console.log(cellAddressArray);
+}
+```
+
+The `getAddress()` method called on the `results` variable can either work or throw an error such as below:
+
+```
+`Line 3: Cannot read property 'getAddress' of undefined`
+```
+So, it is important to check if the `results` 
 
 Per [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), the optional chaining operator (`?.`) permits reading the value of a property located deep within a chain of connected objects without having to expressly validate that each reference in the chain is valid. The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
 
