@@ -98,7 +98,9 @@ The Office Scripts methods accept zero or many arguments depending on the type o
 * Number
 * Boolean
 * Excel objects as Range, Table, etc. 
-* Object parameter 
+* Object  
+
+For object argument, simply add open close curly patenthesis `{}`, take your cursor to the middle of the open close parenthesis and type `ctrl space` together. It'll open up the code completion to help you pick the key & value pair you need to complete the argument. 
 
 Then there is a special parameter known as enumerator - which basically allows standardzied argument that Excel accepts for a given method. Example of enumerator (ENUM) argument passed to the method:
 
