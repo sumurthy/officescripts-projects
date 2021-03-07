@@ -10,9 +10,7 @@ For each of the following projects, check out the folders for description, sourc
 |---------|---------|
 | [Basics of Office Script and getting started](Getting%20Started)    | Learn about the Office Script language, basics of the object model, performance tips, error handling, etc.   |
 | [Learn about the Excel Range object](Range%20Basics)    | This article shows the basics of using Range object and its APIs. This is a foundational topic that'll be used across all other projects. Start here..   |
-| [Top tips to accelarate your learning](Top%205%20Tips)    | Use the following tips to reduce your development time and improve quality of the scripts.
-
-  |
+| [Top tips to accelarate your learning](Top%205%20Tips)    | Use the following tips to reduce your development time and improve quality of the scripts.|
 
 
 [Official documentation site](https://docs.microsoft.com/office/dev/scripts/)
