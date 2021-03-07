@@ -31,6 +31,9 @@ A collection of snippets showin in the video (doesn't do anything meaningful..)
 
 * [RangeBasics](ReadWriteBasics.ts)
 
+## Range 2-dimensional nature
+
+[See this page to understand range values, formuals, etc. 2D nature](../Top%205%20Tips/README.MD#tip-5---range-values-texts-etc-2-dimensional-to-1-dimensional-conversion)
 
 ## Methods that return some range metadata 
 
