@@ -170,9 +170,56 @@ For single cell range, use the singtular versions of the API. For multi-cell ran
 You may wish to convert the 2-dimensional result into 1-dimensional array for further processing. Let's see how to achieve that for a single row and single column. 
 
 
+```ts
+function main(workbook: ExcelScript.Workbook)
+{
+  const table = workbook.getActiveWorksheet().getTables()[0];
+  const header = table.getHeaderRowRange().getTexts();
+  // Display header as 1D array
+  console.log(header[0]); // Extract 1st row
+
+
+  const sales = table.getColumnByName('Sales').getRange().getValues();
+  console.log(sales);
+  
+  // Get column-0
+  const salesAs1DArray = extractColumn(sales, 0);
+  console.log(salesAs1DArray);
+
+  // Add 100 to each value
+  const revisedSales = salesAs1DArray.map(data => data as number + 100);
+  // Add a column
+  table.addColumn(-1, revisedSales);
+
+  const salesBackTo2D = convertColumnTo2D(salesAs1DArray);
+  console.log(salesBackTo2D);
+
+}
+
+/**
+ * Extract a column from 2D array and return result.
+ */
+function extractColumn(data: (string | number | boolean)[][], index: number): (string | number | boolean)[] {
+
+  const column = data.map((row) => {
+    return row[index];
+  })
+  return column;
+}
+
+/**
+ * Convert a flat array into 2D array that can be used as range column
+ */
+function convertColumnTo2D(data: (string | number | boolean)[]): (string | number | boolean)[][] {
+
+  const columnAs2D = data.map((row) => {
+    return [row];
+  })
+  return columnAs2D;
+}
+```
+
 For setter APIs, the model is similar. There are singular `setValue()`, `setFormula()`, etc. APIs that accepts an argument of single type (string or number or boolean depending on the API). If you use these methods on a range with multiple cells, all cells will be set to the same value/formula, etc. 
 
 * `range.setValue('Hello')` --> this will set all cells in the range to value `Hello`. 
 * `range.setValues([['Hello', 'World!]])` --> this will set rwo adjacent cells of the range. If you are using plural version of the API, the dimension of the range should match the dimension of the argument. 
-
-
