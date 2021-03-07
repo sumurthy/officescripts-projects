@@ -1,11 +1,20 @@
 # Top tips to accelarate your learning 
 
-Use the following tips to reduce your development time and improve quality of the scripts.
+Use the following tips to reduce your development time and improve quality of the scripts. See the video, source scripts, and description for each tip below.
+
+## Video
+
+[]() 
 
 ## Scripts used in the video 
 
 * [Top 4 tips](Top4Tips.ts)
 * [5th tip](Range2DTo1DAndBack.ts)
+
+## Excle file used in the video
+
+* [Input Excel file](Top5Tips.xlsx)
+
 
 ## Tip 1 - Use code-completion/IntelliSense in the editor 
 
