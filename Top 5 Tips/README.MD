@@ -38,13 +38,10 @@ When you are using the cell value it is important to tell TypeScript what value 
 function main(workbook: ExcelScript.Workbook) {
 
   const xlDate1value = workbook.getActiveWorksheet().getRange('A2').getValue();
-  const xlDate2value = workbook.getActiveWorksheet().getRange('B2').getValue();
 
   const jsDate1 = xlDateToJSDate(xlDate1value as number); // Tell TypeScript compiler that the value will be a number
   console.log(jsDate1.toUTCString())
 
-  const jsDate2 = xlDateToJSDate(xlDate2value as number); // Tell TypeScript compiler that the value will be a number
-  console.log(jsDate2.toUTCString())
 }
 
 /**
@@ -59,6 +56,7 @@ function xlDateToJSDate(serialDate: number): Date {
   return returnDate;
 }
 ```
+We are conveying the information that `xlDate1value` is a number using the assertion `xlDate1value as number` while invoking the function. 
 
 Similarly, you can use `as string`, `as boolean` **Type Assertions**. 
 
