@@ -103,7 +103,7 @@ function xlDateToJSDate(serialDate: number): Date {
 }
 ```
 
-## Tip 3 - Understand arguments - object type
+## Tip 3 - Understand method's argument types
 
 The Office Scripts methods accept zero or many arguments depending on the type of the method. `workbook.getActiveWorksheet()` or `workbook.getActiveCell()` doesn't require any argument for them to work; however `workbook.getWorksheet()` method requires the name or ID of the worksheet such as `workbook.getWorksheet('Sheet1')`. The arguments passed to methods can be of many data types such as: 
 * String
