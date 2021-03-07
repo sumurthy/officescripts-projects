@@ -64,26 +64,17 @@ Note that such compile-time warnings will not affect the actual running of the s
 
 If indeed the cell had a non-numeric value at run-time, the helper function will fail to execute and throw an error. So, if you are unsure about the type of data present then you must do a run-time check before calling this function that expects a numeric argument. Let's see how to do that. 
 
-Script source: 
-
-* [Range2DTo1DAndBack.ts](Range2DTo1DAndBack.ts)
-
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
 
   const xlDate1value = workbook.getActiveWorksheet().getRange('A2').getValue();
-  const xlDate2value = workbook.getActiveWorksheet().getRange('B2').getValue();
-
+  
   if (typeof xlDate1value === 'number') {
     const jsDate1 = xlDateToJSDate(xlDate1value as number);
     console.log(jsDate1.toUTCString())
   }
 
-  if (typeof xlDate2value === 'number') {
-    const jsDate2 = xlDateToJSDate(xlDate2value as number);
-    console.log(jsDate2.toUTCString())
-  }
 }
 
 
