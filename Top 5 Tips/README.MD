@@ -47,9 +47,6 @@ function main(workbook: ExcelScript.Workbook) {
   console.log(jsDate2.toUTCString())
 }
 
-Similarly, you can use `as string`, `as boolean` **Type Assertions**. 
-
-
 /**
  * Function to return the JS date from Excel date
  * 
@@ -62,6 +59,8 @@ function xlDateToJSDate(serialDate: number): Date {
   return returnDate;
 }
 ```
+
+Similarly, you can use `as string`, `as boolean` **Type Assertions**. 
 
 Note that such compile-time warnings will not affect the actual running of the script as at runtime you are really passing the numerical argument. However, the TypeScript compiler doesn't know the values at runtime and hence it shows the warning in the editor. 
 
