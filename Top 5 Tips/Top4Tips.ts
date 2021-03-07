@@ -3,8 +3,6 @@ function main(workbook: ExcelScript.Workbook) {
   const xlDate1value = workbook.getActiveWorksheet().getRange('A2').getValue();
   const xlDate2value = workbook.getActiveWorksheet().getRange('B2').getValue();
 
-  workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.contents);
-
   const jsDate1 = xlDateToJSDate(xlDate1value as number);
   console.log(jsDate1.toUTCString())
 
