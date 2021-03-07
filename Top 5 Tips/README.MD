@@ -114,7 +114,7 @@ In the above lines, different standardized enumerator arguments are passed to th
 
 The `null` or `undefined` types crop up as part of API return values and can cause quite a bit of headache if not handled properly. Fortunately, TypeScript/JavaScript language offers an easy way to check if a variable is of type undefined or null easily. 
 
-For example, the `findAll` API can either return the range areas where the string "locks" is found or it can return `undefined` (if there is no such string in the worksheet). 
+For example, the `findAll` API can either return the range areas where the string "breaks" is found or it can return `undefined` (if there is no such string in the worksheet). 
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
