@@ -2,6 +2,11 @@
 
 Use the following tips to reduce your development time and improve quality of the scripts.
 
+## Scripts used in the video 
+
+* [Top 4 tips](Top4Tips.ts)
+* [5th tip](Range2DTo1DAndBack.ts)
+
 ## Tip 1 - Use code-completion/IntelliSense in the editor 
 
 Per [VS Code document](https://code.visualstudio.com/docs/editor/intellisense), IntelliSense is a general term for various code editing features including: code completion, parameter info, quick info, and member lists. IntelliSense features are sometimes called by other names such as "code completion", "content assist", and "code hinting."
