@@ -1,6 +1,6 @@
 function main(workbook: ExcelScript.Workbook) {
 
-  const xlDate1value = workbook.getActiveWorksheet().getRange('A2').getValue();
+  const xlDate1value = workbook.getActiveWorksheet().getRange('A1').getValue();
 
   const jsDate1 = xlDateToJSDate(xlDate1value as number);
   console.log(jsDate1.toUTCString())
