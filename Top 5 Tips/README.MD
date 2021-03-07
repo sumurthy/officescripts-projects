@@ -154,6 +154,25 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-## Tip 5 - Arrays 
+## Tip 5 - Range values, texts, etc. 2-dimensional to 1-dimensional conversion  
+
+Range is the foundational object within Office Script's Excel object model. [Range APIs](https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.range?view=office-scripts) allows access to both data and format that available on the grid and links other key objects within Excel such as worksheets, tables, charts, etc. 
+
+In Excel API object model, both a cell (single cell) and a range (1 or more cells) are represented by the same [range](https://docs.microsoft.com/en-us/javascript/api/office-scripts/excelscript/excelscript.range?view=office-scripts) object.
+
+Range offers getter APIs to get a singular value (top-left cell if there are more than 1 cells) or multiple cell values. 
+
+* Range object's `range.getText(), `getValue()`, `getNumberFormat()` and `getFormula()` methods return a single result (of type string or number or boolean - depending on the API). This is true even if the range contains more than 1 cell. It always gets the result from the 1st cell. 
+* Range object's `range.getTexts(), `getValues()`, `getNumberFormats()` and `getFormulas()` methods return a 2-dimensional result (of type string or number or boolean - depending on the API). This is true even if the range contains just single cell or a single row or single column. It always gets the result in the form of a 2-D array. 
+
+For single cell range, use the singtular versions of the API. For multi-cell range or for range that you don't know in advance how many cells it may contain, use the plural versions of the API. 
+
+You may wish to convert the 2-dimensional result into 1-dimensional array for further processing. Let's see how to achieve that for a single row and single column. 
+
+
+For setter APIs, the model is similar. There are singular `setValue()`, `setFormula()`, etc. APIs that accepts an argument of single type (string or number or boolean depending on the API). If you use these methods on a range with multiple cells, all cells will be set to the same value/formula, etc. 
+
+* `range.setValue('Hello')` --> this will set all cells in the range to value `Hello`. 
+* `range.setValues([['Hello', 'World!]])` --> this will set rwo adjacent cells of the range. If you are using plural version of the API, the dimension of the range should match the dimension of the argument. 
 
 
