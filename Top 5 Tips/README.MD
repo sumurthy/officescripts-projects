@@ -93,9 +93,9 @@ The Office Scripts methods accepts zero or many arguments depending on the type 
 
 Then there is a special parameter known as enumerator - which basically allows standardzied argument that Excel accepts for a given method. Example of enumerator (ENUM) argument passed to the method:
 
-* workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.contents)
-* workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.formats)
-* workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.all)
+* `workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.contents)`
+* `workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.formats)`
+* `workbook.getActiveCell().clear(ExcelScript.ClearApplyTo.all)`
 
 In the above lines, different standardized enmerator arguments are passed to the range's clear method. The name of the enumerator is `ExcelScript.ClearApplyTo` and it offers options such as `contents1`, `formats` and `all` in the last segment of the enumerator. 
 
@@ -107,21 +107,52 @@ For example, the `findAll` API can either return the range areas where the strin
 
 ```ts
 function main(workbook: ExcelScript.Workbook) {
-  const results = workbook.getActiveWorksheet().findAll("Locks", {matchCase: true});
-  const cellAddressArray = results.getAddress().split(',');
+  // Search for Breaks in the current worksheet 
+  const result = workbook.getActiveWorksheet().findAll("brakes", {matchCase: false});
+  console.log(result.getAddress());
+  
+  // Split the resulting adddress string into array 
+  const cellAddressArray = result.getAddress().split(',');
   console.log(cellAddressArray);
+}
+
+```
+
+The `getAddress()` method called on the `result` variable can either work or throw an error such as the one below:
+
+```
+`Line 7: Cannot read property 'getAddress' of undefined`
+```
+
+So, it is important to check if the `getAddress()` method returned an string or `undefined` type. You can easily do that using the following syntax:
+
+```ts
+function main(workbook: ExcelScript.Workbook) {
+  // Search for Breaks in the current worksheet 
+  const result = workbook.getActiveWorksheet().findAll("brakes", {matchCase: true});
+  if (result) {
+    console.log(result.getAddress());
+    
+    // Split the resulting adddress string into array 
+    const cellAddressArray = result.getAddress().split(',');
+    console.log(cellAddressArray);
+  }
 }
 ```
 
-The `getAddress()` method called on the `results` variable can either work or throw an error such as below:
+Another technique you can use to avoid such runtime error is to use optional chaining. Per [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), the optional chaining operator (`?.`) permits reading the value of a property located deep within a chain of connected objects without having to expressly validate that each reference in the chain is valid. The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
 
+```ts
+function main(workbook: ExcelScript.Workbook) {
+  // Search for Breaks in the current worksheet 
+  const result = workbook.getActiveWorksheet().findAll("brakes", {matchCase: true});
+  console.log(result?.getAddress());
+
+  // Split the resulting adddress string into array 
+  const cellAddressArray = result?.getAddress()?.split(',');
+  console.log(cellAddressArray);
+}
 ```
-`Line 3: Cannot read property 'getAddress' of undefined`
-```
-So, it is important to check if the `results` 
-
-Per [docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining), the optional chaining operator (`?.`) permits reading the value of a property located deep within a chain of connected objects without having to expressly validate that each reference in the chain is valid. The ?. operator functions similarly to the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
-
 
 ## Tip 5 - Arrays 
 
