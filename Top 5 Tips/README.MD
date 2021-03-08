@@ -4,7 +4,7 @@ Use the following tips to reduce your development time and improve the quality o
 
 ## Video
 
-[![Top 5 tops](top5.png)](https://youtu.be/xm2z_D8eP_o "Watch step by step video")
+[![Top 5 tops](top-5.png)](https://youtu.be/xm2z_D8eP_o "Watch step by step video")
 
 ## Scripts used in the video 
 
