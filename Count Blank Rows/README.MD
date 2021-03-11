@@ -7,5 +7,14 @@ This project includes two scripts:
 
 Note: In this case, blank row is any row where there's no data (can have format). 
 
+_This sheet returns blank rows of 4_
+
+![Data with blank row](blankrows.png)
+
+_This sheet returns blank rows of 0 (all rows have some data)_
+
+![Data with blank row](noblankrows.png)
+
+
 
 
