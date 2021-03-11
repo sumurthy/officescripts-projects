@@ -15,6 +15,10 @@ Note: In this case, blank row is any row where there's no data (can have format)
 
 ![Data with blank row](noblankrows.png)
 
+## Use this in Power Automation 
+
+![Use in PA](useinpa.png)
+
 
 
 
