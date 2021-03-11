@@ -1,6 +1,8 @@
 function main(workbook: ExcelScript.Workbook): number
 {
-  const sheet = workbook.getWorksheet('Sheet1');
+  const sheet = workbook.getWorksheet('Sheet1'); 
+  // const sheet = workbook.getActiveWorksheet(); // For active worksheet - not suitable for Power Automate related script.  
+  
   const range = sheet.getUsedRange(true); // get value only 
   if (!range) {
     console.log(`No data on this sheet. `);
