@@ -1,5 +1,3 @@
-
-```ts
 function main(workbook: ExcelScript.Workbook)
 {
   const table = workbook.getActiveWorksheet().getTables()[0];
@@ -46,4 +44,3 @@ function convertColumnTo2D(data: (string | number | boolean)[]): (string | numbe
   })
   return columnAs2D;
 }
-```
