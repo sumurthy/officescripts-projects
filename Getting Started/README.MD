@@ -7,6 +7,7 @@ This section provides details about the basics of Office Scripts including acces
 
 * [Access, environment and editor](#environment)
 * [Gentle introduction to script](#gentle-introduction-to-script)
+* [Type declarations](#type-declarations)
 * [Error handling](#error-handling)
 * [Range basics](#range-basics)
 * [Basic performance considerations](#basic-performance-considerations)
@@ -344,7 +345,7 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-### Type declarations
+## Type declarations
 
 Type declarations help users understand the type of variable they are dealing with. It helps with auto-completion of methods and assists in development time quality checks. 
 You can find type declarations in the script in various places including function declaration, variable declaration, IntelliSence definitions, etc. 
@@ -458,7 +459,7 @@ interface ReportImages {
 ```
 
 
-#### Type assertion (overriding the type)
+### Type assertion (overriding the type)
 
 As the TypeScript [documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#type-assertions) states,  "sometimes you’ll end up in a situation where you’ll know more about a value than TypeScript does. Usually, this will happen when you know the type of some entity could be more specific than its current type.Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion is like a type cast in other languages, but it performs no special checking or restructuring of data. It has no runtime impact and is used purely by the compiler." 
 
@@ -514,19 +515,19 @@ If you are uncertain about the type of a variable, one cool trick in TypeScript 
    someRange.setValue(value);
 ```
 
-#### Type inference 
+### Type inference 
 
-In TypeScript, there are several places where [type inference](https://www.typescriptlang.org/docs/handbook/type-inference.html) is used to provide type information when there is no explicit type annotation. For example, in this code
+In TypeScript, there are several places where [type inference](https://www.typescriptlang.org/docs/handbook/type-inference.html) is used to provide type information when there is no explicit type annotation. For example, in this code..
 
 ```typescript
 let x = 3;
 //  ^ = let x: number
 ```
 
-The type of the x variable is inferred to be a number. This kind of inference takes place when initializing variables and members, setting parameter default values, and determining function return types. 
+the type of the x variable is inferred to be a number. This kind of inference takes place when initializing variables and members, setting parameter default values, and determining function return types. 
 
 
-#### no-implicit-any rule
+### no-implicit-any rule
 A script requires the types of the variables used to be explicitly or implicity defined. If TypeScript compiler is unable to determine the type of a variable (either because type is not defined explicitly or type inference is not possible), then you will receive a compilation time error (error prior to the running of the script).  You will see an error in the editor as well.
 
 ![Implicit any error](iany.png)
