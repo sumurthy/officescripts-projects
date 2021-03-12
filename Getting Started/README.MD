@@ -60,7 +60,7 @@ Some of the basic concepts helpful to understand to edit and navigate around scr
 * Understanding of `main` function and arguments
 * Objects and hierarchy, methods, properties
 * Collection (array): navigation and operations
-* Type definitions
+* Type declarations
 * Environment: record/edit, run, examine results, share.
 
 This video and section explains some of the above concepts in detail. 
@@ -344,7 +344,7 @@ function main(workbook: ExcelScript.Workbook) {
 }
 ```
 
-### Type definitions
+### Type declarations
 
 Type declarations help users understand the type of variable they are dealing with. It helps with auto-completion of methods and assists in development time quality checks. 
 You can find type declarations in the script in various places including function declaration, variable declaration, IntelliSence definitions, etc. 
@@ -355,9 +355,108 @@ Examples:
 * `let myRange: ExcelScript.Range;` 
 * `function getMaxAmount(range: ExcelScript.Range): number`
 
-You can identify the types easily in the code editor as it appears distinctly usually in a different color. The color `:` usually precedes the type declaration.  
+You can identify the types easily in the code editor as it appears distinctly usually in a different color. The colon `:` usually precedes the type declaration.  
 
-Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code. For the most part TypeScript language is good at inferring the types of variables. However, in certain cases, Office Script will require the type declarations be explicitly defined if the language is unable to clearly identify the type. Also, explicit or implicit `any` is not allowed in Office Script. More on that below 
+Writing types can be optional in TypeScript, because type inference allows you to get a lot of power without writing additional code. For the most part TypeScript language is good at inferring the types of variables. However, in certain cases, Office Script will require the type declarations be explicitly defined if the language is unable to clearly identify the type. Also, explicit or implicit `any` is not allowed in Office Script. More on that below.
+
+#### `ExcelScript` types
+
+In Office Scripts, you will use following kinds of types. 
+
+* Native language types such as `number`, `string`, `object`, `boolean`, `null`, etc. 
+* Excel API's types. They begin with `ExcelScript`. e.g., `ExcelScript.Range`, `ExcelScript.Table`, etc. 
+* Any custom interfaces you may have defined in the script using `interface` statements. See examples of each of them below. 
+
+
+**_Native language types_** 
+
+In the example below, notice places where `string`, `number`, `boolean` have been used. These are native **TypeScript** language types. 
+
+```typescript
+function main(workbook: ExcelScript.Workbook)
+{
+  const table = workbook.getActiveWorksheet().getTables()[0];
+  const sales = table.getColumnByName('Sales').getRange().getValues();
+  console.log(sales);
+  // Add 100 to each value
+  const revisedSales = salesAs1DArray.map(data => data as number + 100);
+  // Add a column
+  table.addColumn(-1, revisedSales);  
+}
+/**
+ * Extract a column from 2D array and return result.
+ */
+function extractColumn(data: (string | number | boolean)[][], index: number): (string | number | boolean)[] {
+
+  const column = data.map((row) => {
+    return row[index];
+  })
+  return column;
+}
+/**
+ * Convert a flat array into 2D array that can be used as range column
+ */
+function convertColumnTo2D(data: (string | number | boolean)[]): (string | number | boolean)[][] {
+
+  const columnAs2D = data.map((row) => {
+    return [row];
+  })
+  return columnAs2D;
+}
+```
+
+**_ExcelScript types_**
+
+In the example below, a helper function takes two arguments. The first one is the `sheet` variable which is of type `ExcelScript.Worksheet` type. 
+
+```typescript
+function main(workbook: ExcelScript.Workbook) {
+    const sheet = workbook.getWorksheet('Sheet5');
+    const data = ['2016', 'Bikes', 'Seats', '1500', .05];
+    addRow(sheet, data);
+    return;
+}
+
+function addRow(sheet: ExcelScript.Worksheet, data: (string | number | boolean)[]): void {
+
+    const usedRange = sheet.getUsedRange();
+    let startCell: ExcelScript.Range;
+    // IF the sheet is empty, then use A1 as starting cell for update
+    if (usedRange) { 
+      startCell = usedRange.getLastRow().getCell(0, 0).getOffsetRange(1, 0);
+    } else {
+      startCell = sheet.getRange('A1');
+    }
+    console.log(startCell.getAddress());
+    const targetRange = startCell.getResizedRange(0, data.length - 1);      
+    targetRange.setValues([data]);
+    return;
+}
+```
+
+**_Custom types_**
+
+The custom interface `ReportImages` is used to return images to another flow action. The `main` function declaration includes `: ReportImages` instruction to tell TypeScript that an object of that type is being returned. 
+
+```typescript
+function main(workbook: ExcelScript.Workbook): ReportImages {
+  let chart = workbook.getWorksheet("Sheet1").getCharts()[0];
+  const table = workbook.getWorksheet('InvoiceAmounts').getTables()[0];
+  
+  const chartImage = chart.getImage();
+  const tableImage = table.getRange().getImage();
+  return {
+    chartImage,
+    tableImage
+  }
+}
+
+interface ReportImages {
+  chartImage: string
+  tableImage: string
+}
+```
+
 
 #### Type assertion (overriding the type)
 
