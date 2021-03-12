@@ -66,7 +66,7 @@ A collection of snippets showin in the video (doesn't do anything meaningful..)
 * getIsEntireColumn()
 
 ## Methods that return other range object
-
+* getSurroundingRegion() --similar to CurrentRegion in VBA
 * getCell(row, column)
 * getColumn(column)
 * getColumnHidden()
