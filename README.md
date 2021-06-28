@@ -4,6 +4,10 @@ This repository contains [Office Scripts](https://docs.microsoft.com/office/dev/
 
 For each of the following projects, check out the folders for description, source code, step-by-step [**Youtube videos**](https://www.youtube.com/playlist?list=PLr3zVPZrMOUMl88fs8uc2GGAePRnNe6m0) for select projects. 
 
+## Support 
+
+**This repository is not currently being maintained. Samples and guidance here could be out of date. Please refer to official documentation for the latest.**
+
 ## Basics 
 
 | Project | Details |
@@ -57,11 +61,11 @@ The project is open sourced. Try it out yourself. You'll need Microsoft (Office)
 
 ## Contact
 
-I work for the Office Scripts product team. I'm eager to get feedback on the features I work on. I'm also passionate about automation, web based solutions, TypeScript/JavaScript technologies and hence my motiviation to add these content both as a way to test the product I work on and also contribute samples that others can use. I welcome any feedback you can send, positive or negative, on the product/code/content. Feel free to log your comments in issues. 
 
 * [LinkedIn](https://www.linkedin.com/in/rsudhi/)
 * [Twitter](https://twitter.com/rsudhi)
 
+_Note_: This repo is not being maintained. 
 
 ## Leave a comment
 Feel free to leave a comment or make a suggestion or log an issue by [opening a new issue](https://github.com/sumurthy/officescripts-projects/issues).
