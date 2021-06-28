@@ -6,7 +6,7 @@ For each of the following projects, check out the folders for description, sourc
 
 ## Support 
 
-**This repository is not currently being maintained. Samples and guidance here could be out of date. Please refer to official documentation for the latest.**
+**This repository is currently not being maintained. Samples and guidance mentioned in the repo and related videos could be out of date. Please refer to official documentation for the latest.**
 
 ## Basics 
 
